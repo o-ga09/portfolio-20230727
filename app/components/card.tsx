@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Image, Text } from "../common/components";
-import { ArticleCardButton, BlogCardButton, OutPutCardButton, SkillCardButton } from "./button";
+import { ArticleCardButton, BlogCardButton, OutPutCardButton, SkillCardButton } from "./Button";
 interface Profileprops{
     title :string,
     contents:string

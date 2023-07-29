@@ -1,5 +1,4 @@
-import {Box, Flex, useMediaQuery, Image,Text, UnorderedList, ListItem, Button} from "./common/components/index";
-import { Gopher, GopherPink, GopherYellow } from "./components/Button";
+import {Box,Image,Text, UnorderedList, ListItem} from "./common/components/index";
 import Header from "./components/Header";
 
 export default function Home() {

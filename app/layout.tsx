@@ -1,9 +1,9 @@
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Provider from './common/provider';
-import Footer from './components/footer';
+import Footer from './components/Footer';
 import { Box, Flex } from './common/components';
-import { Gopher, GopherPink, GopherYellow } from './components/button';
+import { Gopher, GopherPink, GopherYellow } from './components/Button';
 
 const inter = Inter({ subsets: ['latin'] })
 const siteName = 'おーがのブログ';
@@ -32,7 +32,7 @@ export const metadata = {
     creator: '@o_ga09',
   },
   verification: {
-    google: '',
+    google: 'h3Hg0yNuOkoR2VsGOkOg8I3VwxdZPLMrkBx2eRAs3m4',
   },
   alternates: {
     canonical: url,

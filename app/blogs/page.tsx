@@ -1,4 +1,3 @@
-import { Fleur_De_Leah } from "next/font/google";
 import { Box, Flex, Grid, GridItem, Heading, Text } from "../common/components";
 import { BlogCard } from "../components/Card";
 import Header from "../components/Header";
