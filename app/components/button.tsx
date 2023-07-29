@@ -1,7 +1,7 @@
 'use client';
 import { useState } from "react";
 import { Box,Button, Flex, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text } from "../common/components";
-import { Star } from "./icon";
+import { Star } from "./Icon";
 import { blogslug, detailHeader, explanetions } from "../const/const";
 
 export const Gopher = () => {

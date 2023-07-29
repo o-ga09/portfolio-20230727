@@ -1,6 +1,6 @@
 import {Box, Flex, useMediaQuery, Image,Text, UnorderedList, ListItem, Button} from "./common/components/index";
-import { Gopher, GopherPink, GopherYellow } from "./components/button";
-import Header from "./components/header";
+import { Gopher, GopherPink, GopherYellow } from "./components/Button";
+import Header from "./components/Header";
 
 export default function Home() {
   const title = 'My Profile Site !!!';

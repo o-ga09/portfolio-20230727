@@ -1,6 +1,6 @@
 import { Grid, GridItem, Heading} from "../common/components";
-import { ArticleCard, ExamCard, OutPutCard, SkillCard } from "../components/card";
-import Header from "../components/header";
+import { ArticleCard, ExamCard, OutPutCard, SkillCard } from "../components/Card";
+import Header from "../components/Header";
 
 
 export default function Skills() {

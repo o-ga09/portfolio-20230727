@@ -1,5 +1,5 @@
 import { Box } from "../common/components";
-import { GitHub, Twitter } from "./icon";
+import { GitHub, Twitter } from "./Icon";
 
 const Footer = () => {
     return (

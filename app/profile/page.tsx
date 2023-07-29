@@ -1,6 +1,6 @@
 import { Box, Grid, GridItem, Text, Image, Heading } from "../common/components";
-import { ProfileCard } from "../components/card";
-import Header from "../components/header";
+import { ProfileCard } from "../components/Card";
+import Header from "../components/Header";
 
 
 export default function Profile() {
