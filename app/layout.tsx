@@ -4,6 +4,8 @@ import Provider from './common/provider';
 import Footer from './components/Footer';
 import { Box, Flex } from './common/components';
 import { Gopher, GopherPink, GopherYellow } from './components/Button';
+import ScriptGa from './components/GA';
+
 
 const inter = Inter({ subsets: ['latin'] })
 const siteName = 'おーがのブログ';
@@ -58,6 +60,7 @@ export default function RootLayout({
             <Gopher />
           </Box>
           <Footer />
+          <ScriptGa />
         </Provider>
       </body>
     </html>
