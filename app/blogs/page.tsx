@@ -1,15 +1,12 @@
 import { Box, Flex, Grid, GridItem, Heading, Text } from "../common/components";
 import { BlogCard } from "../components/Card";
-import Header from "../components/Header";
 import { ArticleAll } from "../const/const";
 
 
 export default function Blogs() {
-  const title = 'Blogs';
   
   return (
     <>
-        <Header title={title} />
         <Grid
             templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(2, 0fr)' }}
             gap={6}

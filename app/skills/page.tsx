@@ -1,10 +1,8 @@
 import { Grid, GridItem, Heading} from "../common/components";
 import { ArticleCard, ExamCard, OutPutCard, SkillCard } from "../components/Card";
-import Header from "../components/Header";
 
 
 export default function Skills() {
-  const title = 'Skills';
   const contents: Map<number,string[]> = new Map();
   const skillTitle = ['スキルレベル','成果物','執筆記事','資格'];
   const skillcontents = ['Go','C/C++','GCP','k8s','VueJs','SalesForce'];
@@ -19,7 +17,6 @@ export default function Skills() {
   
   return (
     <>
-        <Header title={title} />
         {skillTitle.map((title,i) => (
           <>
             <Heading textAlign='center' key={i} textDecoration='underline' paddingTop={16}>{title}</Heading>
