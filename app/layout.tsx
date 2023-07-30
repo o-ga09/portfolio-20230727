@@ -51,8 +51,12 @@ export default function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <Provider>
-          <Flex direction="column" minH="80vh">
-            {children}
+          <Flex direction='row'>
+            <Box w='5%' h='80vh' bg='teal.500'></Box>
+            <Flex direction="column" minH="80vh" w='90%'>
+              {children}
+            </Flex>
+            <Box w='5%' h='80vh' bg='teal.500'></Box>
           </Flex>
           <Box display='flex' w='100%' justifyContent='center' minH='10vh'>
             <GopherPink />

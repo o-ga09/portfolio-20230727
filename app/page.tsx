@@ -1,4 +1,4 @@
-import {Box,Image,Text, UnorderedList, ListItem} from "./common/components/index";
+import {Box,Image,Text, UnorderedList, ListItem, Flex} from "./common/components/index";
 import Header from "./components/Header";
 
 export default function Home() {
@@ -8,7 +8,6 @@ export default function Home() {
   return (
     <>
       <Header title={title} />
-
       <Box p='16px' paddingTop={{ base: '40px', md: '80px'}}>
         <Box
           display='flex'
