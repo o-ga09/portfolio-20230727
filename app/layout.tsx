@@ -34,7 +34,7 @@ export const metadata = {
     creator: '@o_ga09',
   },
   verification: {
-    google: 'h3Hg0yNuOkoR2VsGOkOg8I3VwxdZPLMrkBx2eRAs3m4',
+    google: process.env.VERIFICATION,
   },
   alternates: {
     canonical: url,
