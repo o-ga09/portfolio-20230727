@@ -1,7 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
 
-const PUBLISHER_ID = process.env.PUBLISHER_ID;
+const PUBLISHER_ID = process.env.NEXT_PUBLIC_PUBLISHER_ID;
 
 type GoogleAdsenseProps = {
   slot: string;
@@ -33,7 +33,7 @@ export const GoogleAdsense = ({
       <ins
         className="adsbygoogle"
         style={style}
-        data-adtest={process.env.NODE_ENV === 'production' ? 'off' : 'on'}
+        data-adtest={process.env.NEXT_PUBLIC_NODE_ENV === 'production' ? 'off' : 'on'}
         data-ad-client={`${PUBLISHER_ID}`}
         data-ad-slot={slot}
         data-ad-format={format}

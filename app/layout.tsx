@@ -34,12 +34,12 @@ export const metadata = {
     creator: '@o_ga09',
   },
   verification: {
-    google: process.env.VERIFICATION,
+    google: process.env.NEXT_PUBLIC_VERIFICATION,
   },
   alternates: {
     canonical: url,
   },
-  metadataBase: new URL(process.env.URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL ?? 'http://localhost:3000'),
 };
 
 export default function RootLayout({

@@ -14,8 +14,8 @@ const GoogleAnalytics = () => {
       return
     }
     if (!searchParams) {
-        return
-      }
+      return
+    }
     const url = pathname + searchParams.toString()
     pageview(url)
   }, [pathname, searchParams])
