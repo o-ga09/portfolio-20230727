@@ -4,8 +4,8 @@ import Header from "../components/Header";
 
 
 export default function Profile() {
-  const profileTitle = ['Name','Age','From','Job','Comment','like Game','like Programming Langage','like Anime'];
-  const profileContents = ['オーガ','25','Niigata, Sanjo','Engineer','comment','モンハン／ゼノブレイド／ドラクエ','Go','ハイキュー／七つの大罪'];
+  const profileTitle = ['Name','Age','From','Job','Comment','like Game','好きなプログラム言語','like Anime'];
+  const profileContents = ['オーガ','25','Niigata, Sanjo','Engineer','夢は、エンタメサービスのバックエンドエンジニア','モンハン／ゼノブレイド／ドラクエ','Go','ハイキュー／七つの大罪'];
   
   return (
     <>
@@ -19,8 +19,6 @@ export default function Profile() {
               <GridItem key={index}><ProfileCard title={title} contents={profileContents[index]} /></GridItem>
           ))}
         </Grid>
-
-        <Heading as='h4' fontSize={{base: 8, md: 24}} textAlign='center' fontWeight='bold' p={4}>これから、技術的な記事以外にもブログを定期的に書いていこうと思います！よろしくお願いします。</Heading>
     </>
   )
 }

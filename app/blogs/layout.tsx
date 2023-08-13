@@ -1,3 +1,5 @@
+import { Box } from '../common/components';
+import { GopherPink, GopherYellow, Gopher } from '../components/Button';
 import Header from '../components/Header';
 
 const siteName = 'おーがのプロフィール';

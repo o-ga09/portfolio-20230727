@@ -1,3 +1,5 @@
+import { Box } from '../common/components';
+import { Gopher, GopherPink, GopherYellow } from '../components/Button';
 import Header from '../components/Header';
 
 const siteName = 'おーがのプロフィール';
@@ -44,6 +46,11 @@ export default function ProfileRootLayout({
     <>
       <Header title={title} />
       {children}
+      <Box display='flex' w='100%' justifyContent='center' minH='10vh' bgGradient='linear(to-r, yellow.100, pink.300)' p={16}>
+        <GopherPink />
+        <GopherYellow />
+        <Gopher />
+      </Box>
     </>
 
   )

@@ -20,8 +20,9 @@ interface Examprops{
     title :string,
 }
 interface Blogprops{
-    title :string,
-    index: number
+    title :string;
+    postday:string;
+    index: string
 }
 
 export const ProfileCard = (props: Profileprops) => {
@@ -35,13 +36,13 @@ export const ProfileCard = (props: Profileprops) => {
           boxShadow='3px 3px 10px 2px rgba(133, 224, 92, 0.4)' 
           borderRadius='26px'
           w='300px'
-          h='100px'
+          h='200px'
           fontSize='30px'
           bg='#adf0a2'
         >
             <Flex direction='column'>
-                <Heading textAlign='center' fontSize={24}>{title}</Heading>
-                <Text textAlign='center' fontSize={16}>{contents}</Text>
+                <Heading p={4} textAlign='center' fontSize={24}>{title}</Heading>
+                <Text p={4} textAlign='center' fontSize={16}>{contents}</Text>
             </Flex>
         </Box>
     );
@@ -94,9 +95,10 @@ export const ExamCard = (props: Examprops) => {
 export const BlogCard = (props: Blogprops) => {
     const title = props.title;
     const index = props.index;
+    const postday = props.postday;
     return (
         <>
-            <BlogCardButton title={title} index={index}/>
+            <BlogCardButton title={title} postday={postday} index={index}/>
         </>
     );
 };

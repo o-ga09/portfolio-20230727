@@ -52,14 +52,9 @@ export default function RootLayout({
     <html lang="ja">
       <body className={inter.className}>
         <Provider>
-          <Flex direction="column" minH="80vh" bgGradient='linear(to-r, yellow.100, pink.300)'>
+          <Flex direction="column" minH="90vh" bgGradient='linear(to-r, yellow.100, pink.300)'>
             {children}
           </Flex>
-          <Box display='flex' w='100%' justifyContent='center' minH='10vh' bgGradient='linear(to-r, yellow.100, pink.300)'>
-            <GopherPink />
-            <GopherYellow />
-            <Gopher />
-          </Box>
           <Footer />
           <ScriptGAd />
           <ScriptGa />

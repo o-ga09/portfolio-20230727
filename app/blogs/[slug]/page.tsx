@@ -6,6 +6,9 @@ import remarkHtml from 'remark-html';
 import matter from 'gray-matter';
 import React from 'react'
 import './content.css';
+import { Box, Flex, Grid, GridItem, Heading } from '@/app/common/components';
+import { getArticle } from '../page';
+import { BlogCard } from '@/app/components/Card';
 
 export default async function BlogDetail({ params, searchParams }:{
     params: { slug: string }
@@ -21,10 +24,24 @@ export default async function BlogDetail({ params, searchParams }:{
     const title = data.title; // 記事のタイトル
     const processedContent = await unified().use(remarkParse).use(remarkHtml).process(content);
     const contentHtml = processedContent.toString(); // 記事の本文をHTMLに変換
+
+    const articles = await getArticle();
     return (
-        <div>
-            <h1>{title}</h1>
-            <div dangerouslySetInnerHTML={{ __html: contentHtml }}></div>
-        </div>
+        <Box>
+            <Heading display='flex' justifyContent='center'>{title}</Heading>
+            <Box display='flex' justifyContent='center' marginBottom={16}>
+                <div dangerouslySetInnerHTML={{ __html: contentHtml }}></div>
+            </Box>
+            <Box display='flex' justifyContent='center' p={1}>
+                <Grid
+                    templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(3, 0fr)' }}
+                    gap={6}
+                >
+                    {[...Array(3)].map((_, index) => (
+                        <GridItem><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} index={articles[index].slug} /></GridItem>  
+                    ))}
+                </Grid>
+            </Box>
+        </Box>
     )
 }

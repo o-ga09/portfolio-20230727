@@ -6,8 +6,7 @@ import { Box, Flex, Grid, GridItem, Heading, Text } from "../common/components";
 import { BlogCard } from "../components/Card";
 import { ArticleAll } from "../const/const";
 
-
-export default async function Blogs() {
+export async function getArticle() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
   const postsDirectory = path.join(process.cwd(), 'contents');
   const fileNames = fs.readdirSync(postsDirectory);
@@ -30,39 +29,29 @@ export default async function Blogs() {
     // 最新日付順に並び替え
     posts.sort((a, b) => new Date(b.frontmatter.date).getTime() - new Date(a.frontmatter.date).getTime())
   );
+  return posts
+};
+export default async function Blogs() {
+  const articles = await getArticle();
   
   return (
     <>
+      <Box
+        p={4}
+        marginX='auto'
+      >
+        <Heading marginBottom={16} textDecoration='underline' textAlign='center'>ブログ一覧</Heading>
         <Grid
-            templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(2, 0fr)' }}
-            gap={6}
-            marginX='auto'
-            paddingTop={16}
-          > 
-            {ArticleAll.length === 0 ? (
-              <>
-                <Box
-                  w='300px'
-                  h='100px'
-                >
-                  <Flex direction='column'>
-                    <Heading paddingBottom={4} textDecoration='underline' textAlign='center'>ブログ一覧</Heading>
-                    <ul>
-                    {posts.map((post) => (
-                      <li key={post.slug}>
-                        <Link href={`/blogs/${post.slug}`}>{post.frontmatter.title}</Link>
-                    </li>
-                    ))}
-                    </ul>
-                  </Flex>
-                </Box>
-              </>
-            ) : (
-              ArticleAll.map((title,index) => (
-                <GridItem key={index}><BlogCard title={title} index={index} /></GridItem>
-              ))
-            )}
+          templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(3, 0fr)' }}
+          gap={6}
+        > 
+          <>
+            {articles.map((post) => (
+              <GridItem key={post.slug}><BlogCard title={post.frontmatter.title} postday={post.frontmatter.date} index={post.slug} /></GridItem>
+            ))}
+          </>
         </Grid>
+      </Box>
     </>
   )
 }

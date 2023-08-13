@@ -1,4 +1,5 @@
 import {Box,Image,Text, UnorderedList, ListItem, Flex} from "./common/components/index";
+import { Gopher, GopherPink, GopherYellow } from "./components/Button";
 import Header from "./components/Header";
 
 export default function Home() {
@@ -39,6 +40,11 @@ export default function Home() {
           <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>I like GO / Vue / React / K8s /</Text></ListItem>
           <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>I have FE(基本情報技術者)</Text></ListItem>
         </UnorderedList>
+      </Box>
+      <Box display='flex' w='100%' justifyContent='center' bgGradient='linear(to-r, yellow.100, pink.300)'>
+        <GopherPink />
+        <GopherYellow />
+        <Gopher />
       </Box>
     </>
   )
