@@ -17,10 +17,10 @@ export default function Profile() {
         >
           {profileTitle.map((title,index) => (
               <GridItem key={index}><ProfileCard title={title} contents={profileContents[index]} /></GridItem>
-          ))};
+          ))}
         </Grid>
 
-        <Heading as='h4' fontSize={{base: 8, md: 24}} textAlign='center' fontWeight='bold'>これから、技術的な記事以外にもブログを定期的に書いていこうと思います！よろしくお願いします。</Heading>
+        <Heading as='h4' fontSize={{base: 8, md: 24}} textAlign='center' fontWeight='bold' p={4}>これから、技術的な記事以外にもブログを定期的に書いていこうと思います！よろしくお願いします。</Heading>
     </>
   )
 }

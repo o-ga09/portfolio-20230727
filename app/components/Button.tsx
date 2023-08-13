@@ -20,6 +20,7 @@ export const Gopher = () => {
                 h='100%'
                 onClick={() => push()}
                 p={0}
+                variant='ghost'
             >
                 <Image src='Gophersvg.svg' alt='gopher' />
             </Button>
@@ -43,6 +44,7 @@ export const GopherPink = () => {
                 h='100%'
                 onClick={() => push()}
                 p={0}
+                variant='ghost'
             >
                 <Image src='Gophersvg_pink.svg' alt='gopher' />
             </Button>
@@ -66,6 +68,7 @@ export const GopherYellow = () => {
                 h='100%'
                 onClick={() => push()}
                 p={0}
+                variant='ghost'
             >
                 <Image src='Gophersvg_yellow.svg' alt='gopher' />
             </Button>

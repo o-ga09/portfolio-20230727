@@ -1,13 +1,20 @@
-import { Box } from "../common/components";
+import { Box, Flex, Link, Text, useMediaQuery } from "../common/components";
 import { GitHub, Twitter } from "./Icon";
 
 const Footer = () => {
     return (
-        <Box bgGradient='linear(to-r, pink.500, yellow.200)' color="black" minH='10vh'>
-            copyright 2023 o-ga09
-            <Twitter />
-            <GitHub />
-        </Box>
+        <Box bgGradient='linear(to-r, yellow.100, pink.300)' p={2} color="black" mt="auto" minH='10vh'>
+            <Flex direction='row'>
+                <Link href='/policy' isExternal p={1}>
+                    サイトポリシー
+                </Link>
+                <Text p={1}>
+                    &copy; copyright 2023 o-ga09
+                </Text>
+                <Twitter />
+                <GitHub />
+            </Flex>
+      </Box>
     );
 };
 export default Footer;

@@ -1,17 +1,28 @@
 'use client'
 import React from 'react';
 import { AiOutlineTwitter,AiOutlineGithub,AiFillStar } from "react-icons/ai";
+import { Box } from '../common/components';
 
 
 export const Twitter = () => {
     return (
-        <AiOutlineTwitter />
+        <Box
+            p={1}
+            onClick={() => {window.location.href = 'https://twitter.com/o_ga09'}}
+        >
+            <AiOutlineTwitter size={32} />
+        </Box>
     );
 };
 
 export const GitHub = () => {
     return (
-        <AiOutlineGithub />
+        <Box
+            p={1}
+            onClick={() => {window.location.href = 'https://github.com/o-ga09?tab=repositories'}}
+        >
+            <AiOutlineGithub size={32} />
+        </Box>
     );
 };
 

@@ -2,7 +2,7 @@ import { Box, Text } from "../common/components";
 
 const Header = ({title} : {title: string}) => {
     return (
-        <Box bgGradient='linear(to-r, yellow.200, pink.500)' p={2} color="black">
+        <Box bgGradient='linear(to-r, yellow.100, pink.300)' p={2} color="black">
             <Box display='flex' justifyContent='center'>
             <Text fontSize="25px" fontWeight="bold" mb={{ base: 4, md: 0 }}>
                 {title}
