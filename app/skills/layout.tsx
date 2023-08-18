@@ -2,9 +2,9 @@ import { Box } from '../common/components';
 import { Gopher, GopherPink, GopherYellow } from '../components/Button';
 import Header from '../components/Header';
 
-const siteName = 'おーがのプロフィール';
-const description = 'しがないエンジニア　おーがのプロフィールです';
-const url = 'https://t09-blog.com/profile';
+const siteName = 'おーがのスキル';
+const description = 'しがないエンジニア　おーがのスキルです';
+const url = 'https://t09-blog.com/skills';
 const title = 'Skills';
 
 export const metadata = {

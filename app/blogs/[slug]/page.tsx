@@ -13,9 +13,9 @@ import 'zenn-content-css';
 import "./contents.css"
 import Article from '@/app/components/Article';
 
-const siteName = 'おーがのプロフィール';
-const description = 'しがないエンジニア　おーがのプロフィールです';
-const url = 'https://t09-blog.com/profile';
+const siteName = 'おーがの記事';
+const description = 'しがないエンジニア　おーがの記事です';
+const url = 'https://t09-blog.com/blogs';
 const title = 'Blogs';
 
 export const metadata = {
