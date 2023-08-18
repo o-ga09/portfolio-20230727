@@ -29,10 +29,8 @@ export default async function og({ params: { slug } }: Props) {
   const match = regex.exec(slug);
   let id: number;
   if(match){
-    console.log(match[1]);
     id = parseInt(match[1]) - 1;
   } else{
-    console.log(slug);
     id = 0;
   }
   const post = await getarticleById(id);
