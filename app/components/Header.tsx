@@ -4,7 +4,7 @@ const Header = ({title} : {title: string}) => {
     return (
         <Box bgGradient='linear(to-r, yellow.100, pink.300)' p={2} color="black">
             <Box display='flex' justifyContent='center'>
-            <Text fontSize="50px" fontWeight="bold" mb={{ base: 4, md: 0 }}>
+            <Text fontSize="30px" fontWeight="bold" mb={{ base: 4, md: 0 }}>
                 {title}
             </Text>
             </Box>

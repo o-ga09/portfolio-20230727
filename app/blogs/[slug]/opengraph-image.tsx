@@ -59,8 +59,7 @@ export default async function og({ params: { param_id } }: Props) {
               alignItems: 'center',
             }}
           >
-            aaa
-            {/* {post.frontmatter.title} */}
+            {post.frontmatter.title}
           </div>
         </div>
       ),
