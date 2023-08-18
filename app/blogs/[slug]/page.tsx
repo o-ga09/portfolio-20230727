@@ -50,8 +50,8 @@ export default async function BlogDetail({ params, searchParams }:{
                     templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(3, 0fr)' }}
                     gap={6}
                 >
-                    {[...Array(3)].map((_, index) => (
-                        <GridItem><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} slug={articles[index].slug} image={articles[index].frontmatter.image} /></GridItem>  
+                    {[...Array(3)].map((id, index) => (
+                        <GridItem key={id}><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} slug={articles[index].slug} image={articles[index].frontmatter.image} /></GridItem>  
                     ))}
                 </Grid>
             </Box>
