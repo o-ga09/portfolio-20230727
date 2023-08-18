@@ -3,7 +3,7 @@ import { ImageResponse } from 'next/server';
 import { getarticleById } from '../page';
 
 /** ImageResponse対応 */
-export const runtime = 'edge';
+export const runtime = 'nodejs';
 /** 有効期間 */
 export const revalidate = 10;
 
