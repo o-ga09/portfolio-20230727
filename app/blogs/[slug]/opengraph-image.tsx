@@ -25,9 +25,9 @@ export default async function og({ params: { param_id } }: Props) {
     weight: 700,
   });
   const regex = /blog(\d+)/;
+  console.log("==========");
   const match = param_id.match(regex);
   let id: number;
-  console.log("==========");
   if(match && match[1]){
     id = parseInt(match[1]);
   } else{
