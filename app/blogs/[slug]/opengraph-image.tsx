@@ -40,21 +40,27 @@ export default async function og({ params: { param_id } }: Props) {
         <div
           style={{
             background: 'linear-gradient(yellow, pink)',
-            width: '100%',
-            height: '100%',
+            width: '1200px',
+            height: '630px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyItems: 'center',
+            justifyContent: 'center',
           }}
         >
           <div
             style={{
               fontSize: 56,
+              background: 'white',
               width: '90%',
               height: '90%',
               display: 'flex',
-              alignItems: 'center',
               justifyContent: 'center',
+              alignItems: 'center',
             }}
           >
-            {post.frontmatter.title}
+            aaa
+            {/* {post.frontmatter.title} */}
           </div>
         </div>
       ),
