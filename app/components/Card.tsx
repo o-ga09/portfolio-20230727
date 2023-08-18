@@ -22,7 +22,8 @@ interface Examprops{
 interface Blogprops{
     title :string;
     postday:string;
-    index: string
+    slug: string;
+    image: string;
 }
 
 export const ProfileCard = (props: Profileprops) => {
@@ -94,11 +95,12 @@ export const ExamCard = (props: Examprops) => {
 
 export const BlogCard = (props: Blogprops) => {
     const title = props.title;
-    const index = props.index;
+    const slug = props.slug;
     const postday = props.postday;
+    const image = props.image;
     return (
         <>
-            <BlogCardButton title={title} postday={postday} index={index}/>
+            <BlogCardButton title={title} postday={postday} slug={slug} image={image}/>
         </>
     );
 };

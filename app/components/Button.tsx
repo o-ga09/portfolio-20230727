@@ -1,6 +1,6 @@
 'use client';
 import { useState } from "react";
-import { Box,Button, Flex, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text } from "../common/components";
+import { Box,Button, Flex, Heading, Image, Modal, ModalBody, ModalCloseButton, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure, Text, useMediaQuery } from "../common/components";
 import { Star } from "./Icon";
 import { blogslug, detailHeader, explanetions } from "../const/const";
 
@@ -234,12 +234,15 @@ export const ArticleCardButton = (props: Articleprops) => {
 interface Blogprops {
     title: string;
     postday:string;
-    index: string;
+    slug: string;
+    image: string;
 }
 export const BlogCardButton = (props: Blogprops) => {
+    const [isSmallerThan600] = useMediaQuery("(max-width: 600px)");
     const title = props.title;
-    const index = props.index;
+    const slug = props.slug;
     const postday = props.postday;
+    const image = props.image;
     const push = (index: number) => {
         console.log(blogslug[index]);
     };
@@ -251,14 +254,14 @@ export const BlogCardButton = (props: Blogprops) => {
           justifyContent='center'
           boxShadow='3px 3px 10px 2px rgba(133, 224, 92, 0.4)' 
           borderRadius='26px'
-          w='400px'
-          h='300px'
+          w={isSmallerThan600 ? '200px' : '300px'}
+          h={isSmallerThan600 ? '200px' : '300px'}
           bg='#adf0a2'
-          onClick={() => {window.location.href = `/blogs/${index}`}}
+          onClick={() => {window.location.href = `/blogs/${slug}`}}
           _hover={{ bg: '#adf0a2'}}
         >
             <Flex direction='column'>
-                <Image src="Gophersvg.svg" w='400px' h='100px' p={1}></Image>
+                <Image src={`/${image}`} w='100%' h='100px' p={1}></Image>
                 <Heading textAlign='center' fontSize={16}>{title}</Heading>
                 <Text p={2} fontSize={16} textAlign='center' color='gray.700'>{postday}</Text>
             </Flex>
