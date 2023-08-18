@@ -39,16 +39,23 @@ export default async function og({ params: { param_id } }: Props) {
       (
         <div
           style={{
-            fontSize: 64,
-            background: 'white',
+            background: 'linear(yellow.100, pink)',
             width: '100%',
             height: '100%',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
           }}
         >
-          {post.frontmatter.title}
+          <div
+            style={{
+              fontSize: 56,
+              width: '90%',
+              height: '90%',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+          >
+            {post.frontmatter.title}
+          </div>
         </div>
       ),
       {
