@@ -2,11 +2,13 @@ import path from 'path';
 import fs from 'fs';
 import matter from 'gray-matter';
 import React from 'react'
-import { Box, Grid, GridItem, Heading , Text } from '@/app/common/components';
+import { Box, Grid, GridItem, Heading , Text } from '../../common/components';
 import { getArticle } from '../page';
 import { BlogCard } from '@/app/components/Card';
 import Image from 'next/image';
 import markdownToHtml from 'zenn-markdown-html';
+import 'zenn-content-css';
+import "./contents.css"
 import 'zenn-content-css';
 import "./contents.css"
 import Article from '@/app/components/Article';

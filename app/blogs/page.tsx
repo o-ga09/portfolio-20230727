@@ -3,6 +3,7 @@ import path from "path";
 import matter from 'gray-matter';
 import { Box, Grid, GridItem, Heading } from "../common/components";
 import { BlogCard } from "../components/Card";
+import { ArticleAll } from "../const/const";
 
 export async function getArticle() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
