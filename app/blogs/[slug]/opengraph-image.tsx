@@ -24,9 +24,9 @@ export default async function og({ params: { param_id } }: Props) {
     family: 'Noto Sans JP',
     weight: 700,
   });
-  const regex = /blog(\d+)/;
-  console.log("==========");
-  const match = param_id.match(regex);
+
+  const regex = /(\d+)/;
+  const match = regex.exec(param_id);
   let id: number;
   if(match && match[1]){
     id = parseInt(match[1]);
