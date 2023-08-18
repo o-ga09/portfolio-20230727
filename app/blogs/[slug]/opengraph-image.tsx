@@ -39,7 +39,7 @@ export default async function og({ params: { param_id } }: Props) {
       (
         <div
           style={{
-            background: 'linear(yellow, pink)',
+            background: 'linear-gradient(yellow, pink)',
             width: '100%',
             height: '100%',
           }}
