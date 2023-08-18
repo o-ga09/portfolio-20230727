@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from "path";
 import matter from 'gray-matter';
-import { Box, Flex, Grid, GridItem, Heading, Text } from "../common/components";
+import { Box, Grid, GridItem, Heading } from "../common/components";
 import { BlogCard } from "../components/Card";
 
 export async function getArticle() {

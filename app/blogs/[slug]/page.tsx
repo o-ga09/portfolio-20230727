@@ -46,14 +46,23 @@ export default async function BlogDetail({ params, searchParams }:{
 
             <Heading as='h2' textAlign='center'>最新の他の記事</Heading>
             <Box display='flex' justifyContent='center' p={1} marginY={16}>
+                {articles.length === 0 ?
+                (
+                    <></>
+                ) :
+                (
                 <Grid
                     templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(3, 0fr)' }}
                     gap={6}
                 >
-                    {[...Array(3)].map((id, index) => (
-                        <GridItem key={id}><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} slug={articles[index].slug} image={articles[index].frontmatter.image} /></GridItem>  
+                    {articles && articles.length > 0 && articles.map((article, index) => (
+                        <GridItem key={index}>
+                            <BlogCard title={article.frontmatter.title} postday={article.frontmatter.date} slug={article.slug} image={article.frontmatter.image} />
+                        </GridItem>
                     ))}
                 </Grid>
+                )
+                }
             </Box>
         </Box>
     )
