@@ -28,7 +28,7 @@ export default async function og({ params: { param_id } }: Props) {
   const regex = /(\d+)/;
   const match = regex.exec(param_id);
   let id: number;
-  if(match && match[1]){
+  if(match){
     id = parseInt(match[1]) - 1;
   } else{
     id = 0;
