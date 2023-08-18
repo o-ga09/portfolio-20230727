@@ -1,10 +1,8 @@
 import fs from 'fs';
 import path from "path";
 import matter from 'gray-matter';
-import Link from 'next/link';
 import { Box, Flex, Grid, GridItem, Heading, Text } from "../common/components";
 import { BlogCard } from "../components/Card";
-import { ArticleAll } from "../const/const";
 
 export async function getArticle() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
@@ -47,7 +45,7 @@ export default async function Blogs() {
         > 
           <>
             {articles.map((post) => (
-              <GridItem key={post.slug}><BlogCard title={post.frontmatter.title} postday={post.frontmatter.date} index={post.slug} /></GridItem>
+              <GridItem key={post.slug}><BlogCard title={post.frontmatter.title} postday={post.frontmatter.date} slug={post.slug} image={post.frontmatter.image}/></GridItem>
             ))}
           </>
         </Grid>

@@ -1,14 +1,15 @@
 import path from 'path';
 import fs from 'fs';
-import { unified } from 'unified';
-import remarkParse from 'remark-parse';
-import remarkHtml from 'remark-html';
 import matter from 'gray-matter';
 import React from 'react'
-import './content.css';
-import { Box, Flex, Grid, GridItem, Heading } from '@/app/common/components';
+import { Box, Grid, GridItem, Heading , Text } from '@/app/common/components';
 import { getArticle } from '../page';
 import { BlogCard } from '@/app/components/Card';
+import Image from 'next/image';
+import markdownToHtml from 'zenn-markdown-html';
+import 'zenn-content-css';
+import "./contents.css"
+import Article from '@/app/components/Article';
 
 export default async function BlogDetail({ params, searchParams }:{
     params: { slug: string }
@@ -22,23 +23,35 @@ export default async function BlogDetail({ params, searchParams }:{
     const fileContents = fs.readFileSync(filePath, 'utf8');
     const { data, content } = matter(fileContents);
     const title = data.title; // 記事のタイトル
-    const processedContent = await unified().use(remarkParse).use(remarkHtml).process(content);
-    const contentHtml = processedContent.toString(); // 記事の本文をHTMLに変換
+    const contentHtml = markdownToHtml(content);
 
     const articles = await getArticle();
     return (
         <Box>
-            <Heading display='flex' justifyContent='center'>{title}</Heading>
-            <Box display='flex' justifyContent='center' marginBottom={16}>
-                <div dangerouslySetInnerHTML={{ __html: contentHtml }}></div>
+            <Box p={1}>
+                <Box
+                    display='flex'
+                    justifyContent='center'
+                >
+                    <Image
+                        src={`/${data.image}`}
+                        width={100}
+                        height={300}
+                        alt={data.title}
+                    />
+                </Box>
             </Box>
-            <Box display='flex' justifyContent='center' p={1}>
+            <Heading display='flex' justifyContent='center' p={1}>{title}</Heading>
+            <Article content={contentHtml} />
+
+            <Heading as='h2' textAlign='center'>最新の他の記事</Heading>
+            <Box display='flex' justifyContent='center' p={1} marginY={16}>
                 <Grid
                     templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(3, 0fr)' }}
                     gap={6}
                 >
                     {[...Array(3)].map((_, index) => (
-                        <GridItem><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} index={articles[index].slug} /></GridItem>  
+                        <GridItem><BlogCard title={articles[index].frontmatter.title} postday={articles[index].frontmatter.date} slug={articles[index].slug} image={articles[index].frontmatter.image} /></GridItem>  
                     ))}
                 </Grid>
             </Box>
