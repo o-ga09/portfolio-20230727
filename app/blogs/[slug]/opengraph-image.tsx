@@ -32,6 +32,7 @@ export default async function og({ params: { param_id } }: Props) {
     console.log(match[1]);
     id = parseInt(match[1]) - 1;
   } else{
+    console.log("========");
     id = 0;
   }
   const post = await getarticleById(id);
