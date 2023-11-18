@@ -1,28 +1,28 @@
-import { Box, Text } from "../common/components";
+import styles from "../../styles/styles.module.css";
 
-const Header = ({title} : {title: string}) => {
-    return (
-        <Box bgGradient='linear(to-r, yellow.100, pink.300)' p={2} color="black">
-            <Box display='flex' justifyContent='center'>
-            <Text fontSize="30px" fontWeight="bold" mb={{ base: 4, md: 0 }}>
-                {title}
-            </Text>
-            </Box>
-            <Box display='flex' justifyContent={{ base: 'center', md: 'flex-end'}}>
-            <Box as="a" href="/" p={2} color="black" _hover={{ textDecoration: "underline" }}>
-                <Text fontSize="md">Home</Text>
-            </Box>
-            <Box as="a" href="/profile" p={2} color="black" _hover={{ textDecoration: "underline" }}>
-                <Text fontSize="md">Profile</Text>
-            </Box>
-            <Box as="a" href="/skills" p={2} color="black" _hover={{ textDecoration: "underline" }}>
-                <Text fontSize="md">Skills</Text>
-            </Box>
-            <Box as="a" href="/blogs" p={2} color="black" _hover={{ textDecoration: "underline" }}>
-                <Text fontSize="md">Blogs</Text>
-            </Box>
-            </Box>
-        </Box>
-    );
+const Header = ({ title }: { title: string }) => {
+  return (
+    <>
+      <div className={styles.header}>
+        <h1>{title}</h1>
+        <nav>
+          <ul>
+            <li>
+              <a href="#">Home</a>
+            </li>
+            <li>
+              <a href="#">Profile</a>
+            </li>
+            <li>
+              <a href="#">Skills</a>
+            </li>
+            <li>
+              <a href="#">Blogs</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </>
+  );
 };
 export default Header;
