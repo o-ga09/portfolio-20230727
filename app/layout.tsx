@@ -48,9 +48,7 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Header title={"title"} />
         {children}
-        <Footer />
         <ScriptGAd />
         <ScriptGa />
       </body>

@@ -1,6 +1,9 @@
 import styles from "../../styles/styles.module.css";
+import ToggleDarkMode from "./Theme";
+import { SunIcon, MoonIcon } from "../common/components/index";
+import { GitHubRepo } from "./Icon";
 
-const Header = ({ title }: { title: string }) => {
+export const Header = ({ title }: { title: string }) => {
   return (
     <>
       <div className={styles.header}>
@@ -8,16 +11,24 @@ const Header = ({ title }: { title: string }) => {
         <nav>
           <ul>
             <li>
-              <a href="#">Home</a>
+              <a id={styles.a} href="/">
+                Home
+              </a>
             </li>
             <li>
-              <a href="#">Profile</a>
+              <a id={styles.a} href="#">
+                Profile
+              </a>
             </li>
             <li>
-              <a href="#">Skills</a>
+              <a id={styles.a} href="#">
+                Skills
+              </a>
             </li>
             <li>
-              <a href="#">Blogs</a>
+              <a id={styles.a} href="/blogs">
+                Blogs
+              </a>
             </li>
           </ul>
         </nav>
@@ -25,4 +36,26 @@ const Header = ({ title }: { title: string }) => {
     </>
   );
 };
-export default Header;
+
+export const BlogHeader = () => {
+  return (
+    <>
+      <div className={styles.blogHeader}>
+        <h1>
+          <a href="/">o-gaのテックブログ</a>
+        </h1>
+        <div className={styles.searchForm}>
+          <label>検索</label>
+          <input type="text" placeholder="Search ..." />
+        </div>
+        <div className={styles.icons}>
+          <SunIcon className={styles.icon} />
+          <ToggleDarkMode />
+          <MoonIcon className={styles.icon} />
+          <GitHubRepo />
+          <a href="/">Home</a>
+        </div>
+      </div>
+    </>
+  );
+};

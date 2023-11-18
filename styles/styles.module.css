@@ -1,3 +1,51 @@
+/* メインページのスタイル */
+#body {
+  width: 100%;
+  height: 100%;
+  background-image: url("/main-image.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  color: white;
+}
+
+#body::before {
+  content: "";
+  background: black;
+  position: absolute;
+  width: 100%;
+  height: 620vh;
+  top: 0;
+  left: 0;
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+#section {
+  position: relative;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  z-index: 1;
+  color: white;
+}
+
+#h2 {
+  position: absolute;
+  font-size: 2rem;
+  top: 70%;
+  z-index: 2;
+  letter-spacing: 2px;
+  opacity: 1;
+  transition: all 0.2s;
+  color: white;
+}
+
+#a {
+  text-decoration: none;
+  color: white;
+}
+
 .title {
   position: absolute;
   top: 15%;
@@ -62,3 +110,84 @@
 .footer p {
   margin-left: 30px;
 }
+
+/* ブログページスタイル */
+.blogHeader {
+  display: flex;
+  height: 100px;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 15px;
+  font-weight: bold;
+  padding: 0 40px;
+}
+
+.searchForm {
+  display: flex;
+  height: 30px;
+  width: 300px;
+  justify-content: center;
+}
+
+.searchForm label {
+  margin-right: 15px;
+  align-items: center;
+  font-size: 20px;
+}
+
+.searchForm input {
+  border-radius: 10px;
+  width: 200px;
+  border: 1px solid;
+}
+
+.blogHeader a {
+  text-decoration: none;
+  width: 100px;
+  text-align: center;
+  font-size: 20px;
+}
+
+.blogLists {
+  position: relative;
+  padding: 16px;
+  min-height: 80vh;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  margin-right: 30px;
+  margin-left: 30px;
+}
+
+.blogHeader a {
+  text-decoration: none;
+  background-image: linear-gradient(90deg, #e53e3e, #e53e3e);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 3px;
+  transition: background-size 0.6s;
+}
+
+.blogHeader a:hover {
+  background-size: 100% 3px; /* 線の横幅を100%にする */
+}
+
+.footer a {
+  text-decoration: none;
+  background-image: linear-gradient(90deg, #e53e3e, #e53e3e);
+  background-repeat: no-repeat;
+  background-position: left bottom;
+  background-size: 0 3px;
+  transition: background-size 0.6s;
+}
+
+.footer a:hover {
+  background-size: 100% 3px; /* 線の横幅を100%にする */
+}
+
+/* ポリシーページレイアウト */

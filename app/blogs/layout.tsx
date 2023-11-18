@@ -1,11 +1,9 @@
-import { Box } from '../common/components';
-import { GopherPink, GopherYellow, Gopher } from '../components/Button';
-import Header from '../components/Header';
+import Provider from "../common/provider";
 
-const siteName = 'おーがの記事';
-const description = 'しがないエンジニア　おーがの記事です';
-const url = 'https://t09-blog.com/blogs';
-const title = 'Blogs';
+const siteName = "おーがの記事";
+const description = "しがないエンジニア　おーがの記事です";
+const url = "https://t09-blog.com/blogs";
+const title = "Blogs";
 
 export const metadata = {
   title: {
@@ -19,14 +17,14 @@ export const metadata = {
     description,
     url,
     siteName,
-    locale: 'ja_JP',
-    type: 'website',
+    locale: "ja_JP",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteName,
     description,
-    creator: '@o_ga09',
+    creator: "@o_ga09",
   },
   verification: {
     google: process.env.NEXT_PUBLIC_VERIFICATION,
@@ -34,19 +32,13 @@ export const metadata = {
   alternates: {
     canonical: url,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000"),
 };
 
 export default function ProfileRootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
-  return (
-    <>
-      <Header title={title} />
-      {children}
-    </>
-
-  )
+  return <Provider>{children}</Provider>;
 }
