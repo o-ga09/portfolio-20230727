@@ -2,7 +2,7 @@ import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
 import { BlogHeader } from "../components/Header";
-import Footer from "../components/Footer";
+import { Footer } from "../components/Footer";
 import { Grid, GridItem } from "../common/components/index";
 import { BlogCard } from "../components/Card";
 import styles from "../../styles/styles.module.css";

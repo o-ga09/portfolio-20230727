@@ -1,6 +1,6 @@
 import { Box } from "../common/components";
 import { Gopher, GopherPink, GopherYellow } from "../components/Button";
-import Header from "../components/Header";
+import { Header } from "../components/Header";
 
 const siteName = "おーがのスキル";
 const description = "しがないエンジニア　おーがのスキルです";

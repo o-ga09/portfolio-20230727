@@ -2,7 +2,7 @@ import { FC } from "react";
 import { Title, Section } from "./components/Section";
 import styles from "../styles/styles.module.css";
 import { Header } from "./components/Header";
-import Footer from "./components/Footer";
+import { Footer } from "./components/Footer";
 
 const Home: FC = () => {
   return (
