@@ -2,6 +2,7 @@
 import React from "react";
 import { AiOutlineTwitter, AiOutlineGithub, AiFillStar } from "react-icons/ai";
 import { Box } from "../common/components";
+import styles from "../../styles/styles.module.css";
 
 export const Twitter = () => {
   return (
@@ -25,6 +26,20 @@ export const GitHub = () => {
       onClick={() => {
         window.location.href = "https://github.com/o-ga09?tab=repositories";
       }}
+    >
+      <AiOutlineGithub size={32} />
+    </Box>
+  );
+};
+
+export const GitHubRepo = () => {
+  return (
+    <Box
+      p={1}
+      onClick={() => {
+        window.location.href = "https://github.com/o-ga09/portfolio-20230727";
+      }}
+      className={styles.icon}
     >
       <AiOutlineGithub size={32} />
     </Box>

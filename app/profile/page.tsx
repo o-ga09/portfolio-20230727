@@ -1,24 +1,50 @@
-import { Box, Grid, GridItem, Text, Image, Heading } from "../common/components";
+import {
+  Box,
+  Grid,
+  GridItem,
+  Text,
+  Image,
+  Heading,
+} from "../common/components";
 import { ProfileCard } from "../components/Card";
-import Header from "../components/Header";
-
+import { Header } from "../components/Header";
 
 export default function Profile() {
-  const profileTitle = ['Name','Age','From','Job','Comment','like Game','好きなプログラム言語','like Anime'];
-  const profileContents = ['オーガ','25','Niigata, Sanjo','Engineer','夢は、エンタメサービスのバックエンドエンジニア','モンハン／ゼノブレイド／ドラクエ','Go','ハイキュー／七つの大罪'];
-  
+  const profileTitle = [
+    "Name",
+    "Age",
+    "From",
+    "Job",
+    "Comment",
+    "like Game",
+    "好きなプログラム言語",
+    "like Anime",
+  ];
+  const profileContents = [
+    "オーガ",
+    "25",
+    "Niigata, Sanjo",
+    "Engineer",
+    "夢は、エンタメサービスのバックエンドエンジニア",
+    "モンハン／ゼノブレイド／ドラクエ",
+    "Go",
+    "ハイキュー／七つの大罪",
+  ];
+
   return (
     <>
-        <Grid 
-          templateColumns={{ base: 'repeat(1, 0fr)', md: 'repeat(2, 0fr)' }}
-          gap={6}
-          marginX='auto'
-          paddingTop={16}
-        >
-          {profileTitle.map((title,index) => (
-              <GridItem key={index}><ProfileCard title={title} contents={profileContents[index]} /></GridItem>
-          ))}
-        </Grid>
+      <Grid
+        templateColumns={{ base: "repeat(1, 0fr)", md: "repeat(2, 0fr)" }}
+        gap={6}
+        marginX="auto"
+        paddingTop={16}
+      >
+        {profileTitle.map((title, index) => (
+          <GridItem key={index}>
+            <ProfileCard title={title} contents={profileContents[index]} />
+          </GridItem>
+        ))}
+      </Grid>
     </>
-  )
+  );
 }
