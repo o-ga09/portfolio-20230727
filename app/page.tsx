@@ -6,7 +6,7 @@ import { Footer } from "./components/Footer";
 
 const Home: FC = () => {
   return (
-    <div id={styles.body}>
+    <div className={styles.body}>
       <Header title={"title"} />
       <Title />
       {[...Array(6)].map((_, index) => (

@@ -32,7 +32,7 @@ export const Section: React.FC<SectionProps> = ({ index }) => {
   });
   return (
     <>
-      <section id={styles.section}>
+      <section className={styles.section}>
         <div
           ref={ref}
           style={{
@@ -48,7 +48,7 @@ export const Section: React.FC<SectionProps> = ({ index }) => {
               transform: inView ? "scale(1)" : "scale(0)",
               transition: "1s ease-out",
             }}
-            id={styles.h2}
+            className={styles.h2}
           >
             イメージ画像
           </h2>

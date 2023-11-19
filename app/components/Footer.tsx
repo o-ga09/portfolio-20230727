@@ -6,7 +6,7 @@ export const Footer = () => {
   return (
     <>
       <div className={styles.footer}>
-        <a href="/policy" target="blank">
+        <a className={styles.a} href="/policy" target="blank">
           サイトポリシー
         </a>
         <p>&copy; copyright 2023 o-ga09</p>

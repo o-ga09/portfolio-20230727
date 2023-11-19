@@ -1,5 +1,5 @@
 /* メインページのスタイル */
-#body {
+.body {
   width: 100%;
   height: 100%;
   background-image: url("/main-image.jpg");
@@ -9,7 +9,7 @@
   color: white;
 }
 
-#body::before {
+.body::before {
   content: "";
   background: black;
   position: absolute;
@@ -21,7 +21,7 @@
   pointer-events: none;
 }
 
-#section {
+.section {
   position: relative;
   height: 100vh;
   width: 100%;
@@ -30,7 +30,7 @@
   color: white;
 }
 
-#h2 {
+.h2 {
   position: absolute;
   font-size: 2rem;
   top: 70%;
@@ -41,7 +41,7 @@
   color: white;
 }
 
-#a {
+.a {
   text-decoration: none;
   color: white;
 }
@@ -174,7 +174,7 @@
 }
 
 .blogHeader a:hover {
-  background-size: 100% 3px; /* 線の横幅を100%にする */
+  background-size: 100% 3px;
 }
 
 .footer a {
@@ -187,7 +187,7 @@
 }
 
 .footer a:hover {
-  background-size: 100% 3px; /* 線の横幅を100%にする */
+  background-size: 100% 3px;
 }
 
 /* ポリシーページレイアウト */
