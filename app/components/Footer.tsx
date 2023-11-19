@@ -5,14 +5,22 @@ import styles from "../../styles/styles.module.css";
 export const Footer = () => {
   return (
     <>
-      <div className={styles.footer}>
-        <a className={styles.a} href="/policy" target="blank">
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        h={{ base: "20vh", xl: "10vh" }}
+      >
+        <Link href="/policy" target="blank" marginLeft={"30px"}>
           サイトポリシー
-        </a>
-        <p>&copy; copyright 2023 o-ga09</p>
-        <Twitter />
-        <GitHub />
-      </div>
+        </Link>
+        <Flex flexDirection={"row"}>
+          <Twitter />
+          <GitHub />
+        </Flex>
+
+        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
+      </Flex>
     </>
   );
 };
@@ -20,11 +28,18 @@ export const Footer = () => {
 export const Policyfooter = () => {
   return (
     <>
-      <div className={styles.footer}>
-        <p>&copy; copyright 2023 o-ga09</p>
-        <Twitter />
-        <GitHub />
-      </div>
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        h={{ base: "20vh", xl: "10vh" }}
+      >
+        <Flex flexDirection={"row"}>
+          <Twitter />
+          <GitHub />
+        </Flex>
+        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
+      </Flex>
     </>
   );
 };
