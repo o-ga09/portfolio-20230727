@@ -3,6 +3,7 @@ import { Title, Section } from "./components/Section";
 import styles from "../styles/styles.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
+import MouseTracking from "./components/MouseTracking";
 
 const Home: FC = () => {
   return (
@@ -12,6 +13,7 @@ const Home: FC = () => {
       {[...Array(6)].map((_, index) => (
         <Section key={index} index={index} />
       ))}
+      <MouseTracking />
       <Footer />
     </div>
   );
