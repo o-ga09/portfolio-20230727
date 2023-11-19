@@ -1,11 +1,7 @@
 import "./globals.css";
-import { Inter } from "next/font/google";
 import ScriptGa from "./components/GA";
 import ScriptGAd from "./components/ScriptGAd";
-import { Header } from "./components/Header";
-import { Footer } from "./components/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
 const siteName = "おーがのブログ";
 const description = "しがないエンジニア　おーがのサイトです";
 const url = "https://t09-blog.com/";

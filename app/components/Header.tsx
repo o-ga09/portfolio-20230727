@@ -11,22 +11,22 @@ export const Header = ({ title }: { title: string }) => {
         <nav>
           <ul>
             <li>
-              <a id={styles.a} href="/">
+              <a className={styles.a} href="/">
                 Home
               </a>
             </li>
             <li>
-              <a id={styles.a} href="#">
+              <a className={styles.a} href="#">
                 Profile
               </a>
             </li>
             <li>
-              <a id={styles.a} href="#">
+              <a className={styles.a} href="#">
                 Skills
               </a>
             </li>
             <li>
-              <a id={styles.a} href="/blogs">
+              <a className={styles.a} href="/blogs">
                 Blogs
               </a>
             </li>
