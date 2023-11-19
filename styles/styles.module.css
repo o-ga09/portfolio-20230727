@@ -56,6 +56,15 @@
   font-size: 2rem;
 }
 
+.explaination {
+  position: absolute;
+  top: 30%;
+  left: 45%;
+  transform: translateX(-45%);
+  z-index: 1;
+  font-size: 2rem;
+}
+
 .imgWrapper {
   position: relative;
   top: 40%;
