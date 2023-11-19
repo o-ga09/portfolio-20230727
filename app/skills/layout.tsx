@@ -1,6 +1,7 @@
 import { Box } from "../common/components";
+import Provider from "../common/provider";
 import { Gopher, GopherPink, GopherYellow } from "../components/Button";
-import { Header } from "../components/Header";
+import { Header, SkillHeader } from "../components/Header";
 
 const siteName = "おーがのスキル";
 const description = "しがないエンジニア　おーがのスキルです";
@@ -44,13 +45,10 @@ export default function ProfileRootLayout({
 }) {
   return (
     <>
-      <Header title={title} />
-      {children}
-      <Box display="flex" w="100%" justifyContent="center" minH="10vh">
-        <GopherPink />
-        <GopherYellow />
-        <Gopher />
-      </Box>
+      <Provider>
+        <SkillHeader />
+        {children}
+      </Provider>
     </>
   );
 }

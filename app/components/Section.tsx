@@ -3,8 +3,9 @@ import { FC, useRef } from "react";
 import { useInView } from "react-intersection-observer";
 import styles from "../../styles/styles.module.css";
 import Image from "next/image";
+import { title } from "process";
 
-export const Title: FC = () => {
+export const Title = ({ title }: { title: string }) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
@@ -16,7 +17,7 @@ export const Title: FC = () => {
         style={{ opacity: inView ? 1 : 0, transition: "opacity 3s" }}
         className={styles.title}
       >
-        <h1>{inView && "要素が表示されました！"}</h1>
+        <h1>{inView && title}</h1>
       </div>
     </>
   );
@@ -24,9 +25,15 @@ export const Title: FC = () => {
 
 interface SectionProps {
   index: number;
+  contents: string;
+  explain: string;
 }
 
-export const Section: React.FC<SectionProps> = ({ index }) => {
+export const Section: React.FC<SectionProps> = ({
+  index,
+  contents,
+  explain,
+}) => {
   const [ref, inView] = useInView({
     triggerOnce: false,
   });
@@ -50,17 +57,35 @@ export const Section: React.FC<SectionProps> = ({ index }) => {
             }}
             className={styles.h2}
           >
-            イメージ画像
+            {contents}
           </h2>
           {inView && (
             <Image
-              src={"/main-image.jpg"}
+              src={`/${index + 5}.png`}
               alt={"イメージ画像"}
-              width={1}
-              height={1}
+              fill
               className={styles.img}
             />
           )}
+        </div>
+        <div
+          style={{
+            position: "absolute",
+            left: index % 2 == 0 ? "5%" : "47%",
+            width: "50%",
+            padding: "5px",
+          }}
+        >
+          <p
+            style={{
+              transform: inView ? "scale(1)" : "scale(0)",
+              transition: "1s ease-out",
+              fontSize: "2rem",
+              letterSpacing: "2px",
+            }}
+          >
+            {explain}
+          </p>
         </div>
       </section>
     </>

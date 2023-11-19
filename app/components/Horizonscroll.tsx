@@ -2,14 +2,14 @@
 import React from "react";
 import Image from "next/image";
 
-const HorizontalScroll: React.FC = () => {
+const HorizontalScroll = ({ title }: { title: string }) => {
   return (
     <>
       <div style={{ overflow: "hidden", whiteSpace: "nowrap" }}>
         <div className="scrolling-text">
           {/* ここに無限に流れるテキストを追加 */}
           <span>
-            <h2>Text that scrolls infinitely.</h2>{" "}
+            <h2>{title}</h2>{" "}
           </span>
         </div>
       </div>

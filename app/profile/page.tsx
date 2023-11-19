@@ -7,6 +7,7 @@ import {
   Heading,
 } from "../common/components";
 import { ProfileCard } from "../components/Card";
+import { Footer } from "../components/Footer";
 import { Header } from "../components/Header";
 
 export default function Profile() {
@@ -33,18 +34,21 @@ export default function Profile() {
 
   return (
     <>
-      <Grid
-        templateColumns={{ base: "repeat(1, 0fr)", md: "repeat(2, 0fr)" }}
-        gap={6}
-        marginX="auto"
-        paddingTop={16}
-      >
-        {profileTitle.map((title, index) => (
-          <GridItem key={index}>
-            <ProfileCard title={title} contents={profileContents[index]} />
-          </GridItem>
-        ))}
-      </Grid>
+      <Box minH={"80vh"}>
+        <Grid
+          templateColumns={{ base: "repeat(1, 0fr)", md: "repeat(4, 0fr)" }}
+          gap={6}
+          paddingTop={16}
+          justifyContent={"center"}
+        >
+          {profileTitle.map((title, index) => (
+            <GridItem key={index}>
+              <ProfileCard title={title} contents={profileContents[index]} />
+            </GridItem>
+          ))}
+        </Grid>
+      </Box>
+      <Footer />
     </>
   );
 }
