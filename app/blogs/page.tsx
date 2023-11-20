@@ -3,9 +3,8 @@ import path from "path";
 import matter from "gray-matter";
 import { BlogHeader } from "../components/Header";
 import { Footer } from "../components/Footer";
-import { Grid, GridItem } from "../common/components/index";
+import { Box, Grid, GridItem } from "../common/components/index";
 import { BlogCard } from "../components/Card";
-import styles from "../../styles/styles.module.css";
 
 export async function getArticle() {
   // contentディレクトリ内のマークダウンファイル一覧を取得
@@ -73,13 +72,14 @@ export default async function Blogs() {
   const articles = await getArticle();
   return (
     <>
-      <BlogHeader />
-      <div className={styles.blogLists}>
+      <Box minH={"80vh"}>
+        <BlogHeader />
         <Grid
           templateColumns={{ base: "repeat(1, 0fr)", md: "repeat(3, 0fr)" }}
           gap={6}
           justifyContent={"center"}
           alignItems={"center"}
+          marginTop={4}
         >
           <>
             {articles.map((post) => (
@@ -94,7 +94,7 @@ export default async function Blogs() {
             ))}
           </>
         </Grid>
-      </div>
+      </Box>
       <Footer />
     </>
   );

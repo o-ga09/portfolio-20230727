@@ -1,11 +1,11 @@
 import { FC } from "react";
 import { Title, Section } from "./components/Section";
-import styles from "../styles/styles.module.css";
 import { Header } from "./components/Header";
 import { Footer } from "./components/Footer";
 import MouseTracking from "./components/MouseTracking";
 import HorizontalScroll from "./components/Horizonscroll";
 import TypingAnimation from "./components/Typinganimation";
+import { Box } from "./common/components";
 
 const Home: FC = () => {
   const siteTitle = "オーガのサイト";
@@ -28,7 +28,26 @@ const Home: FC = () => {
   ];
   const scrollTitle = "オーガの遊び場";
   return (
-    <div className={styles.body}>
+    <Box
+      w={"100%"}
+      h={"100%"}
+      backgroundImage={"url('/1.png')"}
+      backgroundSize={"cover"}
+      backgroundPosition={"center"}
+      backgroundAttachment={"fixed"}
+      color={"white"}
+      _before={{
+        content: "''",
+        background: "black",
+        position: "absolute",
+        width: "100%",
+        height: "640vh",
+        top: "0",
+        left: "0",
+        opacity: "0.5",
+        pointerEvents: "none",
+      }}
+    >
       <Header title={siteTitle} />
       <Title title={pageTitle} />
       <TypingAnimation
@@ -45,7 +64,7 @@ const Home: FC = () => {
       <MouseTracking />
       <HorizontalScroll title={scrollTitle} />
       <Footer />
-    </div>
+    </Box>
   );
 };
 
