@@ -1,7 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import styles from "../../styles/styles.module.css";
-
+import { Text } from "../common/components/index";
 interface TypingAnimationProps {
   text: string;
   speed?: number;
@@ -29,7 +28,21 @@ const TypingAnimation: React.FC<TypingAnimationProps> = ({
     };
   }, [text, speed]);
 
-  return <span className={styles.explaination}>{displayedText}</span>;
+  return (
+    <>
+      <Text
+        position={"absolute"}
+        top={"7%"}
+        left={"45%"}
+        transform={"translateX(-45%)"}
+        zIndex={1}
+        fontSize={{ base: "0.8em", xl: "2rem" }}
+      >
+        {displayedText}
+      </Text>
+    </>
+    // <span className={styles.explaination}>{displayedText}</span>
+  );
 };
 
 export default TypingAnimation;
