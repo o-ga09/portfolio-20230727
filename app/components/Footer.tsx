@@ -1,20 +1,45 @@
 import { Box, Flex, Link, Text, useMediaQuery } from "../common/components";
 import { GitHub, Twitter } from "./Icon";
+import styles from "../../styles/styles.module.css";
 
-const Footer = () => {
-    return (
-        <Box bgGradient='linear(to-r, yellow.100, pink.300)' p={2} color="black" mt="auto" minH='10vh'>
-            <Flex direction='row'>
-                <Link href='/policy' isExternal p={1}>
-                    サイトポリシー
-                </Link>
-                <Text p={1}>
-                    &copy; copyright 2023 o-ga09
-                </Text>
-                <Twitter />
-                <GitHub />
-            </Flex>
-      </Box>
-    );
+export const Footer = () => {
+  return (
+    <>
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        h={{ base: "20vh", xl: "10vh" }}
+      >
+        <Link href="/policy" target="blank" marginLeft={"30px"}>
+          サイトポリシー
+        </Link>
+        <Flex flexDirection={"row"}>
+          <Twitter />
+          <GitHub />
+        </Flex>
+
+        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
+      </Flex>
+    </>
+  );
 };
-export default Footer;
+
+export const Policyfooter = () => {
+  return (
+    <>
+      <Flex
+        flexDirection={{ base: "column", xl: "row" }}
+        alignItems={"center"}
+        justifyContent={"center"}
+        h={{ base: "20vh", xl: "10vh" }}
+      >
+        <Flex flexDirection={"row"}>
+          <Twitter />
+          <GitHub />
+        </Flex>
+        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
+      </Flex>
+    </>
+  );
+};

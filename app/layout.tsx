@@ -1,17 +1,11 @@
-import './globals.css'
-import { Inter } from 'next/font/google'
-import Provider from './common/provider';
-import Footer from './components/Footer';
-import { Box, Flex } from './common/components';
-import { Gopher, GopherPink, GopherYellow } from './components/Button';
-import ScriptGa from './components/GA';
-import ScriptGAd from './components/ScriptGAd';
+import "./globals.css";
+import ScriptGa from "./components/GA";
+import ScriptGAd from "./components/ScriptGAd";
+import Provider from "./common/provider";
 
-
-const inter = Inter({ subsets: ['latin'] })
-const siteName = 'おーがのブログ';
-const description = 'しがないエンジニア　おーがのサイトです';
-const url = 'https://t09-blog.com/';
+const siteName = "おーがのブログ";
+const description = "しがないエンジニア　おーがのサイトです";
+const url = "https://t09-blog.com/";
 
 export const metadata = {
   title: {
@@ -25,14 +19,14 @@ export const metadata = {
     description,
     url,
     siteName,
-    locale: 'ja_JP',
-    type: 'website',
+    locale: "ja_JP",
+    type: "website",
   },
   twitter: {
-    card: 'summary_large_image',
+    card: "summary_large_image",
     title: siteName,
     description,
-    creator: '@o_ga09',
+    creator: "@o_ga09",
   },
   verification: {
     google: process.env.NEXT_PUBLIC_VERIFICATION,
@@ -40,26 +34,21 @@ export const metadata = {
   alternates: {
     canonical: url,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_URL ?? 'http://localhost:3000'),
+  metadataBase: new URL(process.env.NEXT_PUBLIC_URL ?? "http://localhost:3000"),
 };
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="ja">
-      <body className={inter.className}>
-        <Provider>
-          <Flex direction="column" minH="90vh" bgGradient='linear(to-r, yellow.100, pink.300)'>
-            {children}
-          </Flex>
-          <Footer />
-          <ScriptGAd />
-          <ScriptGa />
-        </Provider>
+      <body>
+        <Provider>{children}</Provider>
+        <ScriptGAd />
+        <ScriptGa />
       </body>
     </html>
-  )
+  );
 }

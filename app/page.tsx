@@ -1,51 +1,71 @@
-import {Box,Image,Text, UnorderedList, ListItem, Flex} from "./common/components/index";
-import { Gopher, GopherPink, GopherYellow } from "./components/Button";
-import Header from "./components/Header";
+import { FC } from "react";
+import { Title, Section } from "./components/Section";
+import { Header } from "./components/Header";
+import { Footer } from "./components/Footer";
+import MouseTracking from "./components/MouseTracking";
+import HorizontalScroll from "./components/Horizonscroll";
+import TypingAnimation from "./components/Typinganimation";
+import { Box } from "./common/components";
 
-export default function Home() {
-  const title = 'My Profile Site !!!';
-  const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em']
-  
+const Home: FC = () => {
+  const siteTitle = "オーガのサイト";
+  const pageTitle = "オーガの遊び場";
+  const categories = [
+    "Profile",
+    "Skills",
+    "Hobbies",
+    "Prodaucts",
+    "推し",
+    "Future",
+  ];
+  const explains = [
+    "名前は、オーガといいます！　２６歳です。　新潟出身で現在は、東京でエンジニアをやっています。　好きな食べ物は、パスタです。お酒も好きです。将来の夢は、エンタメサービスのバックエンドをつくること。",
+    "スキルは、Go、Node、バックエンドの言語を用いた開発ができます。フロントは少しです。あと、保守の経験もあるので障害対応もできます。",
+    "趣味は、モンハン、ドラクエ、ゼノブレイド、ハイキュー、が好きです。ダーツとかもやります。",
+    "今まで作った制作物はこちらです。",
+    "推しは、山本彩です！",
+    "将来は、エンジニアでワクワクできるサービスを作りたいです。",
+  ];
+  const scrollTitle = "オーガの遊び場";
   return (
-    <>
-      <Header title={title} />
-      <Box p='16px' paddingTop={{ base: '40px', md: '80px'}}>
-        <Box
-          display='flex'
-          fontSize={{ base: '20p', md: '40px'}}
-          fontWeight='bold'
-          textAlign='center'
-          alignItems='center'
-          justifyContent='center'
-          marginX='auto'
-        >
-          <Image 
-            src='/main-image.jpg' 
-            alt='main image' 
-            borderRadius='full'
-            w={{ base: '110px', md: '250px'}}
-            h={{ base: '110px', md: '250px'}}
-          />
-        </Box>
-      </Box>
+    <Box
+      w={"100%"}
+      h={"100%"}
+      backgroundImage={"url('/1.png')"}
+      backgroundSize={"cover"}
+      backgroundPosition={"center"}
+      backgroundAttachment={"fixed"}
+      color={"white"}
+      _before={{
+        content: "''",
+        background: "black",
+        position: "absolute",
+        width: "100%",
+        height: "640vh",
+        top: "0",
+        left: "0",
+        opacity: "0.5",
+        pointerEvents: "none",
+      }}
+    >
+      <Header title={siteTitle} />
+      <Title title={pageTitle} />
+      <TypingAnimation
+        text={"王 立 古 生 物 書 隊 情 報 分 隊 技 術 部 所 属 "}
+      />
+      {[...Array(6)].map((_, index) => (
+        <Section
+          key={index}
+          index={index}
+          contents={categories[index]}
+          explain={explains[index]}
+        />
+      ))}
+      <MouseTracking />
+      <HorizontalScroll title={scrollTitle} />
+      <Footer />
+    </Box>
+  );
+};
 
-      <Box
-        display='flex' 
-        justifyContent='center'
-        p={4}
-      >
-        <UnorderedList>
-          <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>I am O-ga09</Text></ListItem>
-          <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>社会4年目のGolang大好きエンジニアです。</Text></ListItem>
-          <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>I like GO / Vue / React / K8s /</Text></ListItem>
-          <ListItem listStyleType='none'><Text p={2} fontSize={{ base: 15, md: 24}}>I have FE(基本情報技術者)</Text></ListItem>
-        </UnorderedList>
-      </Box>
-      <Box display='flex' w='100%' justifyContent='center' bgGradient='linear(to-r, yellow.100, pink.300)'>
-        <GopherPink />
-        <GopherYellow />
-        <Gopher />
-      </Box>
-    </>
-  )
-}
+export default Home;

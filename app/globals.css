@@ -1,0 +1,20 @@
+@import url("https://fonts.googleapis.com/css2?family=Lusitana:wght@700&family=Poppins:wght@300&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Lusitana", serif;
+  font-family: "Poppins", sans-serif;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(0);
+    opacity: 0;
+  }
+}
