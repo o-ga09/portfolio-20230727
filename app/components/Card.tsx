@@ -1,10 +1,5 @@
 import { Box, Flex, Heading, Text } from "../common/components";
-import {
-  ArticleCardButton,
-  BlogCardButton,
-  OutPutCardButton,
-  SkillCardButton,
-} from "./Button";
+import { ArticleCardButton, BlogCardButton, OutPutCardButton } from "./Button";
 interface Profileprops {
   title: string;
   contents: string;
@@ -55,19 +50,6 @@ export const ProfileCard = (props: Profileprops) => {
         </Text>
       </Flex>
     </Box>
-  );
-};
-
-export const SkillCard = (props: Skillprops) => {
-  const title = props.title;
-  const evaluate = props.evaluate;
-  const index = props.index;
-  const images = ["star", "star", "star"];
-  const imagesToRender = images.slice(0, evaluate);
-  return (
-    <>
-      <SkillCardButton title={title} evaluate={evaluate} index={index} />
-    </>
   );
 };
 

@@ -1,5 +1,4 @@
 "use client";
-import { useState } from "react";
 import {
   Box,
   Button,
@@ -9,7 +8,6 @@ import {
   Text,
   useMediaQuery,
 } from "../common/components";
-import { Star } from "./Icon";
 import { blogslug } from "../const/const";
 
 export const Gopher = () => {
@@ -65,12 +63,6 @@ export const GopherYellow = () => {
     </Box>
   );
 };
-
-interface skillprops {
-  title: string;
-  evaluate: number;
-  index: number;
-}
 
 interface OutPutprops {
   title: string;
