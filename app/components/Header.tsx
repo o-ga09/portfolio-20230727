@@ -22,39 +22,18 @@ export const Header = ({ title }: { title: string }) => {
         m={"0 auto"}
         p={4}
       >
-        <Box p={4} color="white">
+        <Box p={4}>
           <Heading as={"h1"}>
-            <Link href={"/"} color={"white"} textDecoration={"none"}>
-              {title}
+            <Link href={"/"} textDecoration={"none"}>
+              <Text>{title}</Text>
             </Link>
           </Heading>
         </Box>
-        <Box p={4} color="white" letterSpacing={"2px"}>
-          <Link href="/" color={"white"} textDecoration={"none"} marginLeft={4}>
+        <Box p={4} letterSpacing={"2px"}>
+          <Link href="/" textDecoration={"none"} marginLeft={4}>
             Home
           </Link>
-          <Link
-            href="/profile"
-            color={"white"}
-            textDecoration={"none"}
-            marginLeft={4}
-          >
-            Profile
-          </Link>
-          <Link
-            href="/skills"
-            color={"white"}
-            textDecoration={"none"}
-            marginLeft={4}
-          >
-            Skills
-          </Link>
-          <Link
-            href="/blogs"
-            color={"white"}
-            textDecoration={"none"}
-            marginLeft={4}
-          >
+          <Link href="/blogs" textDecoration={"none"} marginLeft={4}>
             Blogs
           </Link>
         </Box>
@@ -172,7 +151,7 @@ export const ProfileHeader = () => {
             transition={"background-size 0.6s"}
             _hover={{ backgroundSize: "100% 3px" }}
           >
-            o-gaのプロフィール
+            <Text>o-gaのプロフィール</Text>
           </Link>
         </Heading>
 
