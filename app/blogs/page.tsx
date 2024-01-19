@@ -1,10 +1,10 @@
 import fs from "fs";
 import path from "path";
 import matter from "gray-matter";
-import { BlogHeader } from "../components/Header";
-import { Footer } from "../components/Footer";
-import { Box, Grid, GridItem } from "../common/components/index";
-import { BlogCard } from "../components/Card";
+import { BlogHeader } from "../../components/Header";
+import { Footer } from "../../components/Footer";
+import { Box, Grid, GridItem } from "../../common/components/index";
+import { BlogCard } from "../../components/Card";
 
 export async function getArticle() {
   // contentディレクトリ内のマークダウンファイル一覧を取得

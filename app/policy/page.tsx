@@ -1,5 +1,5 @@
-import { Box, Text, Heading } from "../common/components";
-import { Policyfooter } from "../components/Footer";
+import { Box, Text, Heading } from "../../common/components";
+import { Policyfooter } from "../../components/Footer";
 
 function Policy() {
   return (

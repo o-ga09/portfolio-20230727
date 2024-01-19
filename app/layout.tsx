@@ -1,7 +1,7 @@
 import "./globals.css";
-import ScriptGa from "./components/GA";
-import ScriptGAd from "./components/ScriptGAd";
-import Provider from "./common/provider";
+import ScriptGa from "../components/GA";
+import ScriptGAd from "../components/ScriptGAd";
+import Provider from "../common/provider";
 
 const siteName = "おーがのブログ";
 const description = "しがないエンジニア　おーがのサイトです";

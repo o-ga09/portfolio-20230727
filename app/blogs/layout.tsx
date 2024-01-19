@@ -1,4 +1,4 @@
-import Provider from "../common/provider";
+import Provider from "../../common/provider";
 
 const siteName = "おーがの記事";
 const description = "しがないエンジニア　おーがの記事です";
