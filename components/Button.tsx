@@ -8,7 +8,7 @@ import {
   Text,
   useMediaQuery,
 } from "../common/components";
-import { blogslug } from "../const/const";
+import { blogslug } from "../lib/const/const";
 
 export const Gopher = () => {
   const push = () => {

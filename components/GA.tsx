@@ -3,7 +3,7 @@
 import { usePathname, useSearchParams } from "next/navigation";
 import Script from "next/script";
 import { useEffect } from "react";
-import { existsGaId, GA_MEASUREMENT_ID, pageview } from "../gtag";
+import { existsGaId, GA_MEASUREMENT_ID, pageview } from "../lib/gtag";
 
 const GoogleAnalytics = () => {
   const pathname = usePathname();
@@ -11,14 +11,14 @@ const GoogleAnalytics = () => {
 
   useEffect(() => {
     if (!existsGaId) {
-      return
+      return;
     }
     if (!searchParams) {
-      return
+      return;
     }
-    const url = pathname + searchParams.toString()
-    pageview(url)
-  }, [pathname, searchParams])
+    const url = pathname + searchParams.toString();
+    pageview(url);
+  }, [pathname, searchParams]);
 
   return (
     <>
