@@ -22,7 +22,7 @@ export default function BlogPage({ articles }: { articles: ArticleInfo[] }) {
           gap={6}
           marginTop={4}
         >
-          {articles.map((item) => (
+          {articles?.map((item) => (
             <Link
               href={`${item.url}`}
               key={item.id}
