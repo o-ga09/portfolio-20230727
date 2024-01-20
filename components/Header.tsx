@@ -17,6 +17,7 @@ export const Header = ({ title }: { title: string }) => {
     <>
       <Flex
         flexDirection={{ base: "column", xl: "row" }}
+        w={"60%"}
         h={"20vh"}
         alignItems={"center"}
         justifyContent={"space-between"}
@@ -25,13 +26,18 @@ export const Header = ({ title }: { title: string }) => {
       >
         <Box p={4} display={"flex"} flexDirection={"row"}>
           <Image
-            src={"/main-image.jpeg"}
+            src={"/icon.jpg"}
             alt={"メイン画像"}
-            width={100}
-            height={100}
-            style={{ marginRight: "1rem" }}
+            width={50}
+            height={50}
+            style={{ marginRight: "1rem", borderRadius: "50px" }}
           />
-          <Heading as={"h1"} display={"flex"} alignItems={"center"}>
+          <Heading
+            as={"h1"}
+            fontSize={30}
+            display={"flex"}
+            alignItems={"center"}
+          >
             <Link href={"/"} textDecoration={"none"}>
               <Text>{title}</Text>
             </Link>
@@ -40,6 +46,9 @@ export const Header = ({ title }: { title: string }) => {
         <Box p={4} letterSpacing={"2px"}>
           <Link href="/" textDecoration={"none"} marginLeft={4} fontSize={25}>
             Home
+          </Link>
+          <Link href="/" textDecoration={"none"} marginLeft={4} fontSize={25}>
+            About
           </Link>
           <Link
             href="/blogs"
