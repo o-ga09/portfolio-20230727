@@ -19,7 +19,7 @@ export const Footer = () => {
           <GitHub />
         </Flex>
 
-        <Text marginLeft={"30px"}>&copy; copyright 2023 o-ga09</Text>
+        <Text marginLeft={"30px"}>&copy; copyright 2024 o-ga09</Text>
       </Flex>
     </>
   );
