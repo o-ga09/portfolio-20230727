@@ -14,19 +14,10 @@ import {
 } from "../common/components/index";
 import { GitHubRepo } from "./Icon";
 import Image from "next/image";
-import { useState } from "react";
 
 export const Header = ({ title }: { title: string }) => {
-  const [isDarkMode, setDarkMode] = useState(false);
   const { colorMode, toggleColorMode } = useColorMode();
-  const handleDarkMode = (e: any) => {
-    if (e.target.value === "light") {
-      toggleColorMode();
-    } else if (e.target.value === "dark") {
-      toggleColorMode();
-    }
-    setDarkMode((prev) => !prev);
-  };
+
   return (
     <>
       <Flex
@@ -72,12 +63,9 @@ export const Header = ({ title }: { title: string }) => {
               justifyContent={"center"}
               alignItems={"center"}
             >
-              {isDarkMode ? (
+              {colorMode == "dark" ? (
                 <>
-                  <Select
-                    icon={<MoonIcon />}
-                    onChange={(e) => handleDarkMode(e)}
-                  >
+                  <Select icon={<MoonIcon />} onChange={toggleColorMode}>
                     <option value="light">light</option>
                     <option value="dark">dark</option>
                     <option value="system">system</option>
@@ -85,10 +73,7 @@ export const Header = ({ title }: { title: string }) => {
                 </>
               ) : (
                 <>
-                  <Select
-                    icon={<SunIcon />}
-                    onChange={(e) => handleDarkMode(e)}
-                  >
+                  <Select icon={<SunIcon />} onChange={toggleColorMode}>
                     <option value="light">light</option>
                     <option value="dark">dark</option>
                     <option value="system">system</option>
