@@ -11,7 +11,7 @@ import {
   Link,
 } from "../common/components";
 
-export const MainPage = () => {
+function MainPage() {
   const name = "オーガ";
   const job = "ソフトウェアエンジニア";
   const introduction =
@@ -234,4 +234,6 @@ export const MainPage = () => {
       </Box>
     </Box>
   );
-};
+}
+
+export default MainPage;
