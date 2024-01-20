@@ -47,7 +47,12 @@ export const Header = ({ title }: { title: string }) => {
           <Link href="/" textDecoration={"none"} marginLeft={4} fontSize={25}>
             Home
           </Link>
-          <Link href="/" textDecoration={"none"} marginLeft={4} fontSize={25}>
+          <Link
+            href="/about"
+            textDecoration={"none"}
+            marginLeft={4}
+            fontSize={25}
+          >
             About
           </Link>
           <Link
