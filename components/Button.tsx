@@ -8,7 +8,6 @@ import {
   Text,
   useMediaQuery,
 } from "../common/components";
-import { blogslug } from "../lib/const/const";
 
 export const Gopher = () => {
   const push = () => {
@@ -162,40 +161,3 @@ interface Blogprops {
   slug: string;
   image: string;
 }
-export const BlogCardButton = (props: Blogprops) => {
-  const [isSmallerThan600] = useMediaQuery("(max-width: 600px)");
-  const title = props.title;
-  const slug = props.slug;
-  const postday = props.postday;
-  const image = props.image;
-  const push = (index: number) => {
-    console.log(blogslug[index]);
-  };
-
-  return (
-    <Box
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      boxShadow="3px 3px 10px 2px rgba(133, 224, 92, 0.4)"
-      borderRadius="26px"
-      w={isSmallerThan600 ? "200px" : "300px"}
-      h={isSmallerThan600 ? "200px" : "300px"}
-      bg="#adf0a2"
-      onClick={() => {
-        window.location.href = `/blogs/${slug}`;
-      }}
-      _hover={{ bg: "#adf0a2" }}
-    >
-      <Flex direction="column">
-        <Image src={`/${image}`} w="100%" h="100px" p={1} alt=""></Image>
-        <Heading textAlign="center" fontSize={16}>
-          {title}
-        </Heading>
-        <Text p={2} fontSize={16} textAlign="center" color="gray.700">
-          {postday}
-        </Text>
-      </Flex>
-    </Box>
-  );
-};

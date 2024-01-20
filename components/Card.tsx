@@ -1,5 +1,5 @@
 import { Box, Flex, Heading, Text } from "../common/components";
-import { ArticleCardButton, BlogCardButton, OutPutCardButton } from "./Button";
+import { ArticleCardButton, OutPutCardButton } from "./Button";
 interface Profileprops {
   title: string;
   contents: string;
@@ -78,22 +78,5 @@ export const ExamCard = (props: Examprops) => {
     <Box w="300px" h="100px">
       <Text textAlign="center">{title}</Text>
     </Box>
-  );
-};
-
-export const BlogCard = (props: Blogprops) => {
-  const title = props.title;
-  const slug = props.slug;
-  const postday = props.postday;
-  const image = props.image;
-  return (
-    <>
-      <BlogCardButton
-        title={title}
-        postday={postday}
-        slug={slug}
-        image={image}
-      />
-    </>
   );
 };
