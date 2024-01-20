@@ -25,22 +25,22 @@ export const Header = ({ title }: { title: string }) => {
         p={4}
       >
         <Box p={4} display={"flex"} flexDirection={"row"}>
-          <Image
-            src={"/icon.jpg"}
-            alt={"メイン画像"}
-            width={50}
-            height={50}
-            style={{ marginRight: "1rem", borderRadius: "50px" }}
-          />
+          <Link href={"/"}>
+            <Image
+              src={"/icon.jpg"}
+              alt={"メイン画像"}
+              width={50}
+              height={50}
+              style={{ marginRight: "1rem", borderRadius: "50px" }}
+            />
+          </Link>
           <Heading
             as={"h1"}
             fontSize={30}
             display={"flex"}
             alignItems={"center"}
           >
-            <Link href={"/"} textDecoration={"none"}>
-              <Text>{title}</Text>
-            </Link>
+            <Text>{title}</Text>
           </Heading>
         </Box>
         <Box p={4} letterSpacing={"2px"}>

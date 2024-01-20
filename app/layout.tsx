@@ -2,6 +2,7 @@ import "./globals.css";
 import ScriptGa from "../components/GA";
 import ScriptGAd from "../components/ScriptGAd";
 import Provider from "../common/provider";
+import { Box } from "@/common/components";
 
 const siteName = "おーがのブログ";
 const description = "しがないエンジニア　おーがのサイトです";
@@ -45,7 +46,11 @@ export default function RootLayout({
   return (
     <html lang="ja">
       <body>
-        <Provider>{children}</Provider>
+        <Provider>
+          <Box w={"100%"} h={"100%"} bgColor={"gray.200"}>
+            {children}
+          </Box>
+        </Provider>
         <ScriptGAd />
         <ScriptGa />
       </body>
