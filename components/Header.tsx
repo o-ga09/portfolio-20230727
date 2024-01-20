@@ -1,3 +1,4 @@
+"use client";
 import ToggleDarkMode from "./Theme";
 import {
   SunIcon,
@@ -8,11 +9,24 @@ import {
   Flex,
   Text,
   Input,
+  Select,
+  useColorMode,
 } from "../common/components/index";
 import { GitHubRepo } from "./Icon";
 import Image from "next/image";
+import { useState } from "react";
 
 export const Header = ({ title }: { title: string }) => {
+  const [isDarkMode, setDarkMode] = useState(false);
+  const { colorMode, toggleColorMode } = useColorMode();
+  const handleDarkMode = (e: any) => {
+    if (e.target.value === "light") {
+      toggleColorMode();
+    } else if (e.target.value === "dark") {
+      toggleColorMode();
+    }
+    setDarkMode((prev) => !prev);
+  };
   return (
     <>
       <Flex
@@ -43,26 +57,73 @@ export const Header = ({ title }: { title: string }) => {
             <Text>{title}</Text>
           </Heading>
         </Box>
-        <Box p={4} letterSpacing={"2px"}>
-          <Link href="/" textDecoration={"none"} marginLeft={4} fontSize={25}>
-            Home
-          </Link>
-          <Link
-            href="/about"
-            textDecoration={"none"}
-            marginLeft={4}
-            fontSize={25}
+        <Box>
+          <Box
+            display={"flex"}
+            p={4}
+            letterSpacing={"2px"}
+            flexDirection={"row"}
+            h={"100%"}
           >
-            About
-          </Link>
-          <Link
-            href="/blogs"
-            textDecoration={"none"}
-            marginLeft={4}
-            fontSize={25}
-          >
-            Blogs
-          </Link>
+            <Box
+              display={"flex"}
+              borderRadius={"5px"}
+              border={"solid 1px black"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              {isDarkMode ? (
+                <>
+                  <Select
+                    icon={<MoonIcon />}
+                    onChange={(e) => handleDarkMode(e)}
+                  >
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                    <option value="system">system</option>
+                  </Select>
+                </>
+              ) : (
+                <>
+                  <Select
+                    icon={<SunIcon />}
+                    onChange={(e) => handleDarkMode(e)}
+                  >
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                    <option value="system">system</option>
+                  </Select>
+                </>
+              )}
+            </Box>
+            <Link
+              display={"block"}
+              href="/"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={25}
+            >
+              Home
+            </Link>
+            <Link
+              display={"block"}
+              href="/about"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={25}
+            >
+              About
+            </Link>
+            <Link
+              display={"block"}
+              href="/blogs"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={25}
+            >
+              Blogs
+            </Link>
+          </Box>
         </Box>
       </Flex>
     </>

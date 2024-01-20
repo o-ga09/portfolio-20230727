@@ -40,5 +40,5 @@ export default function ProfileRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <Provider>{children}</Provider>;
+  return <>{children};</>;
 }
