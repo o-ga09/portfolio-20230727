@@ -2,8 +2,8 @@ import { extendTheme } from "@chakra-ui/react";
 import { mode } from "../components/index";
 
 const customBreakpoints = {
-  sm: "15em",
-  md: "22em",
+  sm: "25em",
+  md: "40em",
   lg: "64em",
   xl: "90em",
 };

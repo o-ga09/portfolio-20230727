@@ -9,16 +9,21 @@ export default function BlogPage({ articles }: { articles: ArticleInfo[] }) {
       minH={"70vh"}
       display={"flex"}
       justifyContent={"center"}
-      p={4}
+      p={8}
     >
-      <Box w={"50%"} h={"100%"} display={"flex"} flexDirection={"column"}>
+      <Box
+        w={{ base: "100%", md: "60%", xl: "50%" }}
+        h={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <Heading as={"h2"} fontSize={30} display={"flex"} alignItems={"center"}>
           Ariticles...
         </Heading>
         <Text marginY={4}>記事一覧です</Text>
         <Grid
           w={"100%"}
-          templateColumns={{ base: "repeat(1, 1fr)", md: "repeat(2, 1fr)" }}
+          templateColumns={{ base: "repeat(1, 1fr)", lg: "repeat(2, 1fr)" }}
           gap={6}
           marginTop={4}
         >
