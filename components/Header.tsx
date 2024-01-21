@@ -18,9 +18,9 @@ export const Header = ({ title }: { title: string }) => {
       <Flex
         flexDirection={{ base: "column", xl: "row" }}
         w={{ base: "100%", xl: "60%" }}
-        h={"20vh"}
+        h={{ base: "25vh", xl: "20vh" }}
         alignItems={"center"}
-        justifyContent={"space-between"}
+        justifyContent={{ base: "", xl: "space-between" }}
         m={"0 auto"}
         p={4}
       >
