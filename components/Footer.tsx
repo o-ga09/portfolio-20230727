@@ -10,8 +10,9 @@ export const Footer = () => {
         alignItems={"center"}
         justifyContent={"center"}
         h={{ base: "20vh", xl: "10vh" }}
+        p={1}
       >
-        <Link href="/policy" target="blank" marginLeft={"30px"}>
+        <Link href="/policy" target="blank">
           サイトポリシー
         </Link>
         <Flex flexDirection={"row"}>
@@ -19,7 +20,7 @@ export const Footer = () => {
           <GitHub />
         </Flex>
 
-        <Text marginLeft={"30px"}>&copy; copyright 2024 o-ga09</Text>
+        <Text>&copy; copyright 2024 o-ga09</Text>
       </Flex>
     </>
   );
