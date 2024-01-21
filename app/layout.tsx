@@ -47,7 +47,7 @@ export default function RootLayout({
     <html lang="ja">
       <body>
         <Provider>
-          <Box w={"100%"} h={"100%"} bgColor={"gray.200"}>
+          <Box w={"100%"} h={"100%"}>
             {children}
           </Box>
         </Provider>

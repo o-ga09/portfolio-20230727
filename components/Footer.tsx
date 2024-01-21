@@ -1,6 +1,5 @@
-import { Box, Flex, Link, Text, useMediaQuery } from "../common/components";
+import { Flex, Link, Text } from "../common/components";
 import { GitHub, Twitter } from "./Icon";
-import styles from "../../styles/styles.module.css";
 
 export const Footer = () => {
   return (

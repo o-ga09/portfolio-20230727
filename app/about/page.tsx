@@ -1,4 +1,3 @@
-import { Box } from "@/common/components";
 import { Footer } from "@/components/Footer";
 import { Header } from "@/components/Header";
 import AboutPage from "@/pages/AboutPage";

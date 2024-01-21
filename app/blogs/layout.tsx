@@ -1,9 +1,6 @@
-import Provider from "../../common/provider";
-
 const siteName = "おーがの記事";
 const description = "しがないエンジニア　おーがの記事です";
 const url = "https://t09-blog.com/blogs";
-const title = "Blogs";
 
 export const metadata = {
   title: {
@@ -40,5 +37,5 @@ export default function ProfileRootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return <Provider>{children}</Provider>;
+  return <>{children};</>;
 }
