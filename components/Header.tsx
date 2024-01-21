@@ -48,31 +48,67 @@ export const Header = ({ title }: { title: string }) => {
             <Text>{title}</Text>
           </Heading>
         </Box>
-        <Box p={4} letterSpacing={"2px"}>
-          <Link
-            href="/"
-            textDecoration={"none"}
-            marginLeft={4}
-            fontSize={{ base: 20, xl: 25 }}
+        <Box>
+          <Box
+            display={"flex"}
+            p={4}
+            letterSpacing={"2px"}
+            flexDirection={"row"}
+            h={"100%"}
           >
-            Home
-          </Link>
-          <Link
-            href="/about"
-            textDecoration={"none"}
-            marginLeft={4}
-            fontSize={{ base: 20, xl: 25 }}
-          >
-            About
-          </Link>
-          <Link
-            href="/blogs"
-            textDecoration={"none"}
-            marginLeft={4}
-            fontSize={{ base: 20, xl: 25 }}
-          >
-            Blogs
-          </Link>
+            <Box
+              display={"flex"}
+              borderRadius={"5px"}
+              border={"solid 1px black"}
+              justifyContent={"center"}
+              alignItems={"center"}
+            >
+              {colorMode == "dark" ? (
+                <>
+                  <Select icon={<MoonIcon />} onChange={toggleColorMode}>
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                    <option value="system">system</option>
+                  </Select>
+                </>
+              ) : (
+                <>
+                  <Select icon={<SunIcon />} onChange={toggleColorMode}>
+                    <option value="light">light</option>
+                    <option value="dark">dark</option>
+                    <option value="system">system</option>
+                  </Select>
+                </>
+              )}
+            </Box>
+            <Link
+              display={"block"}
+              href="/"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={{ base: 20, xl: 25 }}
+            >
+              Home
+            </Link>
+            <Link
+              display={"block"}
+              href="/about"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={{ base: 20, xl: 25 }}
+            >
+              About
+            </Link>
+            <Link
+              display={"block"}
+              href="/blogs"
+              textDecoration={"none"}
+              marginLeft={4}
+              fontSize={{ base: 20, xl: 25 }}
+            >
+              Blogs
+            </Link>
+          </Box>
         </Box>
       </Flex>
     </>
