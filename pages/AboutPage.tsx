@@ -12,8 +12,13 @@ import React from "react";
 
 function AboutPage() {
   return (
-    <Box w={"100%"} display={"flex"} justifyContent={"center"} p={4}>
-      <Box w={"50%"} h={"100%"} display={"flex"} flexDirection={"column"}>
+    <Box w={"100%"} display={"flex"} justifyContent={"center"} p={8}>
+      <Box
+        w={{ base: "100%", xl: "50%" }}
+        h={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <Heading
           as={"h3"}
           fontSize={30}
