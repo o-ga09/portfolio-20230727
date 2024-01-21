@@ -11,6 +11,7 @@ const customBreakpoints = {
 const customTheme = extendTheme({
   breakpoints: customBreakpoints,
   config: {
+    initialColorMode: 'light',
     useSystemColorMode: false,
   },
   colors: {
@@ -22,8 +23,8 @@ const customTheme = extendTheme({
   styles: {
     global: (props: any) => ({
       body: {
-        bg: mode("#1A202C", "#E2E8F0")(props), // ダークモード時の背景色
-        color: mode("#ffffff", "#000000")(props)
+        bg: mode("#E2E8F0", "#1A202C")(props), // mode(ダークモード時, ライトモード時) : 背景色
+        color: mode("#000000", "#ffffff")(props) // mode(ダークモード時, ライトモード時) : 文字色
       },
     }),
   },

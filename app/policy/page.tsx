@@ -1,5 +1,4 @@
 import { Header } from "@/components/Header";
-import { Box, Text, Heading } from "../../common/components";
 import PolicyPage from "@/pages/PolicyPage";
 import { Footer } from "@/components/Footer";
 

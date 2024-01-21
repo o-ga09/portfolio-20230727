@@ -1,4 +1,3 @@
-"use client";
 import ToggleDarkMode from "./Theme";
 import {
   SunIcon,
@@ -9,15 +8,11 @@ import {
   Flex,
   Text,
   Input,
-  Select,
-  useColorMode,
 } from "../common/components/index";
 import { GitHubRepo } from "./Icon";
 import Image from "next/image";
 
 export const Header = ({ title }: { title: string }) => {
-  const { colorMode, toggleColorMode } = useColorMode();
-
   return (
     <>
       <Flex
@@ -59,27 +54,10 @@ export const Header = ({ title }: { title: string }) => {
             <Box
               display={"flex"}
               borderRadius={"5px"}
-              border={"solid 1px black"}
               justifyContent={"center"}
               alignItems={"center"}
             >
-              {colorMode == "dark" ? (
-                <>
-                  <Select icon={<MoonIcon />} onChange={toggleColorMode}>
-                    <option value="light">light</option>
-                    <option value="dark">dark</option>
-                    <option value="system">system</option>
-                  </Select>
-                </>
-              ) : (
-                <>
-                  <Select icon={<SunIcon />} onChange={toggleColorMode}>
-                    <option value="light">light</option>
-                    <option value="dark">dark</option>
-                    <option value="system">system</option>
-                  </Select>
-                </>
-              )}
+              <ToggleDarkMode />
             </Box>
             <Link
               display={"block"}

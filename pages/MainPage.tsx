@@ -16,6 +16,7 @@ function MainPage() {
   const job = "ソフトウェアエンジニア";
   const introduction =
     "ソフトウェアエンジニアをしているオーガです。出身は新潟で、日本酒大好きです。趣味は、ゲーム、アニメ、ダーツです。ゼノブレイドが好きです。推しは、１０年くらい山本彩です。最近、おうちk8sをやっています。";
+
   return (
     <Box w={"100%"} display={"flex"} justifyContent={"center"} p={8}>
       <Box
