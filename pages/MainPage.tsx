@@ -17,8 +17,13 @@ function MainPage() {
   const introduction =
     "ソフトウェアエンジニアをしているオーガです。出身は新潟で、日本酒大好きです。趣味は、ゲーム、アニメ、ダーツです。ゼノブレイドが好きです。推しは、１０年くらい山本彩です。最近、おうちk8sをやっています。";
   return (
-    <Box w={"100%"} display={"flex"} justifyContent={"center"} p={4}>
-      <Box w={"50%"} h={"100%"} display={"flex"} flexDirection={"column"}>
+    <Box w={"100%"} display={"flex"} justifyContent={"center"} p={8}>
+      <Box
+        w={{ base: "100%", xl: "50%" }}
+        h={"100%"}
+        display={"flex"}
+        flexDirection={"column"}
+      >
         <Box p={2} display={"flex"} flexDirection={"row"} marginBottom={10}>
           <Image
             src={"/icon.jpg"}
@@ -29,9 +34,10 @@ function MainPage() {
           />
           <Heading
             as={"h3"}
-            fontSize={20}
+            fontSize={{ base: 15, xl: 20 }}
             display={"flex"}
             alignItems={"center"}
+            marginLeft={{ base: "2rem", xl: 0 }}
           >
             {name}／{job}
           </Heading>

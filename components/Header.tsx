@@ -22,10 +22,10 @@ export const Header = ({ title }: { title: string }) => {
     <>
       <Flex
         flexDirection={{ base: "column", xl: "row" }}
-        w={"60%"}
-        h={"20vh"}
+        w={{ sm: "100%", md: "60%" }}
+        h={"25vh"}
         alignItems={"center"}
-        justifyContent={"space-between"}
+        justifyContent={{ base: "", xl: "space-between" }}
         m={"0 auto"}
         p={4}
       >
@@ -41,74 +41,38 @@ export const Header = ({ title }: { title: string }) => {
           </Link>
           <Heading
             as={"h1"}
-            fontSize={30}
+            fontSize={{ base: 25, xl: 30 }}
             display={"flex"}
             alignItems={"center"}
           >
             <Text>{title}</Text>
           </Heading>
         </Box>
-        <Box>
-          <Box
-            display={"flex"}
-            p={4}
-            letterSpacing={"2px"}
-            flexDirection={"row"}
-            h={"100%"}
+        <Box p={4} letterSpacing={"2px"}>
+          <Link
+            href="/"
+            textDecoration={"none"}
+            marginLeft={4}
+            fontSize={{ base: 20, xl: 25 }}
           >
-            <Box
-              display={"flex"}
-              borderRadius={"5px"}
-              border={"solid 1px black"}
-              justifyContent={"center"}
-              alignItems={"center"}
-            >
-              {colorMode == "dark" ? (
-                <>
-                  <Select icon={<MoonIcon />} onChange={toggleColorMode}>
-                    <option value="light">light</option>
-                    <option value="dark">dark</option>
-                    <option value="system">system</option>
-                  </Select>
-                </>
-              ) : (
-                <>
-                  <Select icon={<SunIcon />} onChange={toggleColorMode}>
-                    <option value="light">light</option>
-                    <option value="dark">dark</option>
-                    <option value="system">system</option>
-                  </Select>
-                </>
-              )}
-            </Box>
-            <Link
-              display={"block"}
-              href="/"
-              textDecoration={"none"}
-              marginLeft={4}
-              fontSize={25}
-            >
-              Home
-            </Link>
-            <Link
-              display={"block"}
-              href="/about"
-              textDecoration={"none"}
-              marginLeft={4}
-              fontSize={25}
-            >
-              About
-            </Link>
-            <Link
-              display={"block"}
-              href="/blogs"
-              textDecoration={"none"}
-              marginLeft={4}
-              fontSize={25}
-            >
-              Blogs
-            </Link>
-          </Box>
+            Home
+          </Link>
+          <Link
+            href="/about"
+            textDecoration={"none"}
+            marginLeft={4}
+            fontSize={{ base: 20, xl: 25 }}
+          >
+            About
+          </Link>
+          <Link
+            href="/blogs"
+            textDecoration={"none"}
+            marginLeft={4}
+            fontSize={{ base: 20, xl: 25 }}
+          >
+            Blogs
+          </Link>
         </Box>
       </Flex>
     </>

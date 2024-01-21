@@ -7,7 +7,6 @@ export const Twitter = () => {
   return (
     <Box
       p={1}
-      marginLeft={"30px"}
       onClick={() => {
         window.location.href = "https://twitter.com/o_ga09";
       }}
@@ -21,7 +20,6 @@ export const GitHub = () => {
   return (
     <Box
       p={1}
-      marginLeft={"30px"}
       onClick={() => {
         window.location.href = "https://github.com/o-ga09?tab=repositories";
       }}
